@@ -7,14 +7,77 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04821F9721FBF953002001B9 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821F9621FBF953002001B9 /* String+Ext.swift */; };
+		04821F9921FBFDEF002001B9 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821F9821FBFDEF002001B9 /* Color+Ext.swift */; };
+		04821FA421FC040B002001B9 /* NotoSansMonoCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9B21FC0403002001B9 /* NotoSansMonoCJKkr-Regular.otf */; };
+		04821FA521FC040B002001B9 /* NotoSansCJKkr-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9C21FC0404002001B9 /* NotoSansCJKkr-Thin.otf */; };
+		04821FA621FC040B002001B9 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9D21FC0405002001B9 /* NotoSansCJKkr-Medium.otf */; };
+		04821FA721FC040B002001B9 /* NotoSansCJKkr-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9E21FC0406002001B9 /* NotoSansCJKkr-DemiLight.otf */; };
+		04821FA821FC040B002001B9 /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9F21FC0407002001B9 /* NotoSansCJKkr-Light.otf */; };
+		04821FA921FC040B002001B9 /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821FA021FC0408002001B9 /* NotoSansCJKkr-Black.otf */; };
+		04821FAA21FC040B002001B9 /* NotoSansMonoCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821FA121FC0409002001B9 /* NotoSansMonoCJKkr-Bold.otf */; };
+		04821FAB21FC040B002001B9 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821FA221FC040A002001B9 /* NotoSansCJKkr-Regular.otf */; };
+		04821FAC21FC040B002001B9 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821FA321FC040B002001B9 /* NotoSansCJKkr-Bold.otf */; };
+		04821FAE21FC04DD002001B9 /* SelectPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04821FAD21FC04DD002001B9 /* SelectPhoto.storyboard */; };
+		04821FB121FC2087002001B9 /* SelectPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FAF21FC2087002001B9 /* SelectPhotoCollectionViewCell.swift */; };
+		04821FB221FC2087002001B9 /* SelectPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04821FB021FC2087002001B9 /* SelectPhotoCollectionViewCell.xib */; };
+		04821FB421FC23A4002001B9 /* SelectPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */; };
+		04821FB721FC268C002001B9 /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FB621FC268C002001B9 /* AssetManager.swift */; };
+		04821FB921FC27F8002001B9 /* Image+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FB821FC27F8002001B9 /* Image+Ext.swift */; };
+		04821FBB2205E338002001B9 /* Label+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FBA2205E338002001B9 /* Label+Ext.swift */; };
+		04821FC02205F0E1002001B9 /* HomeCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FBE2205F0E1002001B9 /* HomeCardTableViewCell.swift */; };
+		04821FC12205F0E1002001B9 /* HomeCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04821FBF2205F0E1002001B9 /* HomeCardTableViewCell.xib */; };
+		04821FC32206A1FE002001B9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FC22206A1FE002001B9 /* DetailViewController.swift */; };
+		6D026A0B20BDC27574ACFFCA /* Pods_MealDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */; };
 		CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */; };
 		CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */; };
 		CE15BA9E21F5EB0B00FD69F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */; };
 		CE15BAA021F5EB0F00FD69F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE15BA9F21F5EB0F00FD69F7 /* Assets.xcassets */; };
 		CE15BAA321F5EB0F00FD69F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE15BAA121F5EB0F00FD69F7 /* LaunchScreen.storyboard */; };
+		CE15BAB321F5EEAF00FD69F7 /* MainHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE15BAB221F5EEAF00FD69F7 /* MainHeaderView.xib */; };
+		CE15BAB521F5EFCA00FD69F7 /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BAB421F5EFCA00FD69F7 /* MainHeaderView.swift */; };
+		CE15BABC21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BABA21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift */; };
+		CE15BABD21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE15BABB21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib */; };
+		CE15BABF21F5FFC100FD69F7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BABE21F5FFC100FD69F7 /* Card.swift */; };
+		CE15BAC121F6070000FD69F7 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BAC021F6070000FD69F7 /* FilterView.swift */; };
+		CE15BAC321F6073100FD69F7 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE15BAC221F6073100FD69F7 /* FilterView.xib */; };
+		CE443D0F21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE443D0D21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift */; };
+		CE443D1021F76FBE00CB52B0 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */; };
+		CE443DB421FA025500CB52B0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB321FA025500CB52B0 /* OpenGLES.framework */; };
+		CE443DB621FA026200CB52B0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB521FA026200CB52B0 /* SystemConfiguration.framework */; };
+		CE443DB821FA026A00CB52B0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB721FA026A00CB52B0 /* CoreLocation.framework */; };
+		CE443DBA21FA027100CB52B0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB921FA027100CB52B0 /* QuartzCore.framework */; };
+		CE443DBC21FA02A100CB52B0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DBB21FA02A100CB52B0 /* libxml2.tbd */; };
+		CE443DBE21FA02B400CB52B0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DBD21FA02B400CB52B0 /* libsqlite3.tbd */; };
+		CE443DC021FA02D400CB52B0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DBF21FA02D400CB52B0 /* libc++.tbd */; };
+		CE443DD121FA031300CB52B0 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DD021FA031300CB52B0 /* DaumMap.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04821F9621FBF953002001B9 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		04821F9821FBFDEF002001B9 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		04821F9B21FC0403002001B9 /* NotoSansMonoCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		04821F9C21FC0404002001B9 /* NotoSansCJKkr-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Thin.otf"; sourceTree = "<group>"; };
+		04821F9D21FC0405002001B9 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
+		04821F9E21FC0406002001B9 /* NotoSansCJKkr-DemiLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-DemiLight.otf"; sourceTree = "<group>"; };
+		04821F9F21FC0407002001B9 /* NotoSansCJKkr-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Light.otf"; sourceTree = "<group>"; };
+		04821FA021FC0408002001B9 /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
+		04821FA121FC0409002001B9 /* NotoSansMonoCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		04821FA221FC040A002001B9 /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		04821FA321FC040B002001B9 /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		04821FAD21FC04DD002001B9 /* SelectPhoto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectPhoto.storyboard; sourceTree = "<group>"; };
+		04821FAF21FC2087002001B9 /* SelectPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		04821FB021FC2087002001B9 /* SelectPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoViewController.swift; sourceTree = "<group>"; };
+		04821FB621FC268C002001B9 /* AssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetManager.swift; sourceTree = "<group>"; };
+		04821FB821FC27F8002001B9 /* Image+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Ext.swift"; sourceTree = "<group>"; };
+		04821FBA2205E338002001B9 /* Label+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+Ext.swift"; sourceTree = "<group>"; };
+		04821FBE2205F0E1002001B9 /* HomeCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardTableViewCell.swift; sourceTree = "<group>"; };
+		04821FBF2205F0E1002001B9 /* HomeCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCardTableViewCell.xib; sourceTree = "<group>"; };
+		04821FC22206A1FE002001B9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		38679EB5624B80F2BB6818CD /* Pods-MealDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.release.xcconfig"; sourceTree = "<group>"; };
+		4558CCC9DA378A8DBF81E8CB /* Pods-MealDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.debug.xcconfig"; sourceTree = "<group>"; };
+		BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE15BA9521F5EB0B00FD69F7 /* MealDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +85,32 @@
 		CE15BA9F21F5EB0F00FD69F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE15BAA221F5EB0F00FD69F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE15BAA421F5EB0F00FD69F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE15BAB221F5EEAF00FD69F7 /* MainHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainHeaderView.xib; sourceTree = "<group>"; };
+		CE15BAB421F5EFCA00FD69F7 /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
+		CE15BABA21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCardTableViewCell.swift; sourceTree = "<group>"; };
+		CE15BABB21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCardTableViewCell.xib; sourceTree = "<group>"; };
+		CE15BABE21F5FFC100FD69F7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		CE15BAC021F6070000FD69F7 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		CE15BAC221F6073100FD69F7 /* FilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
+		CE443D0D21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE443DB321FA025500CB52B0 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		CE443DB521FA026200CB52B0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CE443DB721FA026A00CB52B0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CE443DB921FA027100CB52B0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CE443DBB21FA02A100CB52B0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		CE443DBD21FA02B400CB52B0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		CE443DBF21FA02D400CB52B0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		CE443DC821FA031300CB52B0 /* MTMapPOIItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapPOIItem.h; sourceTree = "<group>"; };
+		CE443DC921FA031300CB52B0 /* MTMapCameraUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapCameraUpdate.h; sourceTree = "<group>"; };
+		CE443DCA21FA031300CB52B0 /* MTMapReverseGeoCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapReverseGeoCoder.h; sourceTree = "<group>"; };
+		CE443DCB21FA031300CB52B0 /* MTMapPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapPolyline.h; sourceTree = "<group>"; };
+		CE443DCC21FA031300CB52B0 /* MTMapLocationMarkerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapLocationMarkerItem.h; sourceTree = "<group>"; };
+		CE443DCD21FA031300CB52B0 /* MTMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapView.h; sourceTree = "<group>"; };
+		CE443DCE21FA031300CB52B0 /* MTMapGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapGeometry.h; sourceTree = "<group>"; };
+		CE443DCF21FA031300CB52B0 /* MTMapCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapCircle.h; sourceTree = "<group>"; };
+		CE443DD021FA031300CB52B0 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
+		CE443DD321FA06AF00CB52B0 /* DaumMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DaumMap-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +118,72 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE443DC021FA02D400CB52B0 /* libc++.tbd in Frameworks */,
+				CE443DBE21FA02B400CB52B0 /* libsqlite3.tbd in Frameworks */,
+				CE443DD121FA031300CB52B0 /* DaumMap.framework in Frameworks */,
+				CE443DBC21FA02A100CB52B0 /* libxml2.tbd in Frameworks */,
+				CE443DBA21FA027100CB52B0 /* QuartzCore.framework in Frameworks */,
+				CE443DB821FA026A00CB52B0 /* CoreLocation.framework in Frameworks */,
+				CE443DB621FA026200CB52B0 /* SystemConfiguration.framework in Frameworks */,
+				CE443DB421FA025500CB52B0 /* OpenGLES.framework in Frameworks */,
+				6D026A0B20BDC27574ACFFCA /* Pods_MealDiary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04821F9521FBF945002001B9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				04821F9621FBF953002001B9 /* String+Ext.swift */,
+				04821F9821FBFDEF002001B9 /* Color+Ext.swift */,
+				04821FB821FC27F8002001B9 /* Image+Ext.swift */,
+				04821FBA2205E338002001B9 /* Label+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		04821F9A21FC03F4002001B9 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				04821FA021FC0408002001B9 /* NotoSansCJKkr-Black.otf */,
+				04821FA321FC040B002001B9 /* NotoSansCJKkr-Bold.otf */,
+				04821F9E21FC0406002001B9 /* NotoSansCJKkr-DemiLight.otf */,
+				04821F9F21FC0407002001B9 /* NotoSansCJKkr-Light.otf */,
+				04821F9D21FC0405002001B9 /* NotoSansCJKkr-Medium.otf */,
+				04821FA221FC040A002001B9 /* NotoSansCJKkr-Regular.otf */,
+				04821F9C21FC0404002001B9 /* NotoSansCJKkr-Thin.otf */,
+				04821FA121FC0409002001B9 /* NotoSansMonoCJKkr-Bold.otf */,
+				04821F9B21FC0403002001B9 /* NotoSansMonoCJKkr-Regular.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		04821FB521FC267E002001B9 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				04821FB621FC268C002001B9 /* AssetManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		3F35808C6608E9C3C8927523 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4558CCC9DA378A8DBF81E8CB /* Pods-MealDiary.debug.xcconfig */,
+				38679EB5624B80F2BB6818CD /* Pods-MealDiary.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CE15BA8C21F5EB0B00FD69F7 = {
 			isa = PBXGroup;
 			children = (
 				CE15BA9721F5EB0B00FD69F7 /* MealDiary */,
 				CE15BA9621F5EB0B00FD69F7 /* Products */,
+				CE443DB221FA025400CB52B0 /* Frameworks */,
+				3F35808C6608E9C3C8927523 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +198,15 @@
 		CE15BA9721F5EB0B00FD69F7 /* MealDiary */ = {
 			isa = PBXGroup;
 			children = (
+				04821FB521FC267E002001B9 /* Manager */,
+				04821F9521FBF945002001B9 /* Extension */,
 				CE15BAB021F5EC0100FD69F7 /* Storyboard */,
 				CE15BAAF21F5EBCA00FD69F7 /* Controller */,
 				CE15BAAE21F5EBC300FD69F7 /* View */,
 				CE15BAAD21F5EBBC00FD69F7 /* Model */,
 				CE15BAAA21F5EB1600FD69F7 /* Etc. */,
 				CE15BAA421F5EB0F00FD69F7 /* Info.plist */,
+				CE443DD321FA06AF00CB52B0 /* DaumMap-Bridging-Header.h */,
 			);
 			path = MealDiary;
 			sourceTree = "<group>";
@@ -67,6 +214,7 @@
 		CE15BAAA21F5EB1600FD69F7 /* Etc. */ = {
 			isa = PBXGroup;
 			children = (
+				04821F9A21FC03F4002001B9 /* Font */,
 				CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */,
 				CE15BA9F21F5EB0F00FD69F7 /* Assets.xcassets */,
 			);
@@ -76,6 +224,7 @@
 		CE15BAAD21F5EBBC00FD69F7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE15BABE21F5FFC100FD69F7 /* Card.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -83,6 +232,10 @@
 		CE15BAAE21F5EBC300FD69F7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE15BAB921F5FB7C00FD69F7 /* Cell */,
+				CE15BAB421F5EFCA00FD69F7 /* MainHeaderView.swift */,
+				CE15BAC021F6070000FD69F7 /* FilterView.swift */,
+				CE15BAB121F5EE9400FD69F7 /* xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -91,6 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */,
+				04821FC22206A1FE002001B9 /* DetailViewController.swift */,
+				04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -98,10 +253,83 @@
 		CE15BAB021F5EC0100FD69F7 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */,
 				CE15BAA121F5EB0F00FD69F7 /* LaunchScreen.storyboard */,
+				CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */,
+				04821FAD21FC04DD002001B9 /* SelectPhoto.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		CE15BAB121F5EE9400FD69F7 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				CE15BAB221F5EEAF00FD69F7 /* MainHeaderView.xib */,
+				CE15BAC221F6073100FD69F7 /* FilterView.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		CE15BAB921F5FB7C00FD69F7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				04821FBE2205F0E1002001B9 /* HomeCardTableViewCell.swift */,
+				04821FBF2205F0E1002001B9 /* HomeCardTableViewCell.xib */,
+				CE15BABA21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift */,
+				CE15BABB21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib */,
+				CE443D0D21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift */,
+				CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */,
+				04821FAF21FC2087002001B9 /* SelectPhotoCollectionViewCell.swift */,
+				04821FB021FC2087002001B9 /* SelectPhotoCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE443DB221FA025400CB52B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE443DC521FA031300CB52B0 /* DaumMap.embeddedframework */,
+				CE443DBF21FA02D400CB52B0 /* libc++.tbd */,
+				CE443DBD21FA02B400CB52B0 /* libsqlite3.tbd */,
+				CE443DBB21FA02A100CB52B0 /* libxml2.tbd */,
+				CE443DB921FA027100CB52B0 /* QuartzCore.framework */,
+				CE443DB721FA026A00CB52B0 /* CoreLocation.framework */,
+				CE443DB521FA026200CB52B0 /* SystemConfiguration.framework */,
+				CE443DB321FA025500CB52B0 /* OpenGLES.framework */,
+				BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE443DC521FA031300CB52B0 /* DaumMap.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				CE443DC621FA031300CB52B0 /* Resources */,
+				CE443DD021FA031300CB52B0 /* DaumMap.framework */,
+			);
+			path = DaumMap.embeddedframework;
+			sourceTree = "<group>";
+		};
+		CE443DC621FA031300CB52B0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE443DC721FA031300CB52B0 /* Headers */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE443DC721FA031300CB52B0 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				CE443DC821FA031300CB52B0 /* MTMapPOIItem.h */,
+				CE443DC921FA031300CB52B0 /* MTMapCameraUpdate.h */,
+				CE443DCA21FA031300CB52B0 /* MTMapReverseGeoCoder.h */,
+				CE443DCB21FA031300CB52B0 /* MTMapPolyline.h */,
+				CE443DCC21FA031300CB52B0 /* MTMapLocationMarkerItem.h */,
+				CE443DCD21FA031300CB52B0 /* MTMapView.h */,
+				CE443DCE21FA031300CB52B0 /* MTMapGeometry.h */,
+				CE443DCF21FA031300CB52B0 /* MTMapCircle.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,9 +339,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE15BAA721F5EB0F00FD69F7 /* Build configuration list for PBXNativeTarget "MealDiary" */;
 			buildPhases = (
+				704999F457A6A8047459A777 /* [CP] Check Pods Manifest.lock */,
 				CE15BA9121F5EB0B00FD69F7 /* Sources */,
 				CE15BA9221F5EB0B00FD69F7 /* Frameworks */,
 				CE15BA9321F5EB0B00FD69F7 /* Resources */,
+				F58BE3E15C826289735CD520 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,20 +392,93 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE15BAB321F5EEAF00FD69F7 /* MainHeaderView.xib in Resources */,
+				04821FA821FC040B002001B9 /* NotoSansCJKkr-Light.otf in Resources */,
 				CE15BAA321F5EB0F00FD69F7 /* LaunchScreen.storyboard in Resources */,
+				CE15BAC321F6073100FD69F7 /* FilterView.xib in Resources */,
+				04821FA521FC040B002001B9 /* NotoSansCJKkr-Thin.otf in Resources */,
+				04821FAC21FC040B002001B9 /* NotoSansCJKkr-Bold.otf in Resources */,
 				CE15BAA021F5EB0F00FD69F7 /* Assets.xcassets in Resources */,
+				04821FA721FC040B002001B9 /* NotoSansCJKkr-DemiLight.otf in Resources */,
+				CE443D1021F76FBE00CB52B0 /* PhotoCollectionViewCell.xib in Resources */,
+				04821FAE21FC04DD002001B9 /* SelectPhoto.storyboard in Resources */,
+				04821FC12205F0E1002001B9 /* HomeCardTableViewCell.xib in Resources */,
+				04821FAA21FC040B002001B9 /* NotoSansMonoCJKkr-Bold.otf in Resources */,
+				CE15BABD21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib in Resources */,
+				04821FAB21FC040B002001B9 /* NotoSansCJKkr-Regular.otf in Resources */,
+				04821FB221FC2087002001B9 /* SelectPhotoCollectionViewCell.xib in Resources */,
+				04821FA921FC040B002001B9 /* NotoSansCJKkr-Black.otf in Resources */,
+				04821FA421FC040B002001B9 /* NotoSansMonoCJKkr-Regular.otf in Resources */,
 				CE15BA9E21F5EB0B00FD69F7 /* Main.storyboard in Resources */,
+				04821FA621FC040B002001B9 /* NotoSansCJKkr-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		704999F457A6A8047459A777 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MealDiary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F58BE3E15C826289735CD520 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE15BA9121F5EB0B00FD69F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04821FBB2205E338002001B9 /* Label+Ext.swift in Sources */,
+				CE15BABC21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift in Sources */,
 				CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */,
+				04821F9921FBFDEF002001B9 /* Color+Ext.swift in Sources */,
+				CE15BAC121F6070000FD69F7 /* FilterView.swift in Sources */,
+				04821FC02205F0E1002001B9 /* HomeCardTableViewCell.swift in Sources */,
+				04821FB721FC268C002001B9 /* AssetManager.swift in Sources */,
+				04821FC32206A1FE002001B9 /* DetailViewController.swift in Sources */,
+				04821FB921FC27F8002001B9 /* Image+Ext.swift in Sources */,
+				CE15BABF21F5FFC100FD69F7 /* Card.swift in Sources */,
+				CE443D0F21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift in Sources */,
+				CE15BAB521F5EFCA00FD69F7 /* MainHeaderView.swift in Sources */,
+				04821FB121FC2087002001B9 /* SelectPhotoCollectionViewCell.swift in Sources */,
+				04821FB421FC23A4002001B9 /* SelectPhotoViewController.swift in Sources */,
+				04821F9721FBF953002001B9 /* String+Ext.swift in Sources */,
 				CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,7 +556,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -308,7 +611,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -320,9 +623,15 @@
 		};
 		CE15BAA821F5EB0F00FD69F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4558CCC9DA378A8DBF81E8CB /* Pods-MealDiary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6ZBD6VFGD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework",
+				);
 				INFOPLIST_FILE = MealDiary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -331,6 +640,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bobbyWhite.MealDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MealDiary/DaumMap-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -338,9 +648,15 @@
 		};
 		CE15BAA921F5EB0F00FD69F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38679EB5624B80F2BB6818CD /* Pods-MealDiary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6ZBD6VFGD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework",
+				);
 				INFOPLIST_FILE = MealDiary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -349,6 +665,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bobbyWhite.MealDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MealDiary/DaumMap-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
