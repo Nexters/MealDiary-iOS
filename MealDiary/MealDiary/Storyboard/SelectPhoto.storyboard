@@ -43,15 +43,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7de-co-aK4" firstAttribute="top" secondItem="Ewy-4a-aCj" secondAttribute="top" constant="20" id="9yN-I2-cuB"/>
-                            <constraint firstItem="Ewy-4a-aCj" firstAttribute="trailing" secondItem="7de-co-aK4" secondAttribute="trailing" constant="17" id="ADl-yC-z3V"/>
-                            <constraint firstItem="Ewy-4a-aCj" firstAttribute="trailing" secondItem="EKy-8o-2MP" secondAttribute="trailing" id="DFY-qr-oJX"/>
-                            <constraint firstItem="EKy-8o-2MP" firstAttribute="leading" secondItem="Ewy-4a-aCj" secondAttribute="leading" id="QUt-ya-pPX"/>
-                            <constraint firstItem="Ewy-4a-aCj" firstAttribute="bottom" secondItem="EKy-8o-2MP" secondAttribute="bottom" id="UqD-as-HjY"/>
+                            <constraint firstItem="7de-co-aK4" firstAttribute="top" secondItem="nu5-7Q-PEh" secondAttribute="top" constant="20" id="9yN-I2-cuB"/>
+                            <constraint firstItem="nu5-7Q-PEh" firstAttribute="trailing" secondItem="7de-co-aK4" secondAttribute="trailing" constant="17" id="ADl-yC-z3V"/>
+                            <constraint firstItem="nu5-7Q-PEh" firstAttribute="trailing" secondItem="EKy-8o-2MP" secondAttribute="trailing" id="DFY-qr-oJX"/>
+                            <constraint firstItem="EKy-8o-2MP" firstAttribute="leading" secondItem="nu5-7Q-PEh" secondAttribute="leading" id="QUt-ya-pPX"/>
+                            <constraint firstItem="nu5-7Q-PEh" firstAttribute="bottom" secondItem="EKy-8o-2MP" secondAttribute="bottom" id="UqD-as-HjY"/>
                             <constraint firstItem="EKy-8o-2MP" firstAttribute="top" secondItem="7de-co-aK4" secondAttribute="bottom" constant="23" id="VHY-x1-4eg"/>
-                            <constraint firstItem="7de-co-aK4" firstAttribute="leading" secondItem="Ewy-4a-aCj" secondAttribute="leading" constant="17" id="Y75-wn-ZMZ"/>
+                            <constraint firstItem="7de-co-aK4" firstAttribute="leading" secondItem="nu5-7Q-PEh" secondAttribute="leading" constant="17" id="Y75-wn-ZMZ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Ewy-4a-aCj"/>
+                        <viewLayoutGuide key="safeArea" id="nu5-7Q-PEh"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="EKy-8o-2MP" id="Lbz-mb-aGA"/>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CoY-AR-eqx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Spoqa Han Sans Bold.ttf">
+            <string>SpoqaHanSans-Bold</string>
+        </array>
+        <array key="Spoqa Han Sans Regular.ttf">
+            <string>SpoqaHanSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Write Place View Controller-->
+        <scene sceneID="QQk-9g-vki">
+            <objects>
+                <viewController storyboardIdentifier="WritePlaceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CoY-AR-eqx" customClass="WritePlaceViewController" customModule="MealDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DFf-qb-ZDh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 어디서 먹었어?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ld5-Ph-VKy">
+                                <rect key="frame" x="20" y="40" width="335" height="36"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="식당 이름" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="L8L-OL-S4N">
+                                <rect key="frame" x="20" y="119" width="335" height="24"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="location"/>
+                                <connections>
+                                    <action selector="placeTextFieldEditingChanged:" destination="CoY-AR-eqx" eventType="editingChanged" id="IIJ-vS-dLH"/>
+                                    <outlet property="delegate" destination="CoY-AR-eqx" id="4tZ-Io-T0o"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRp-MP-ucL" userLabel="seperator">
+                                <rect key="frame" x="20" y="155" width="335" height="1"/>
+                                <color key="backgroundColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="srA-ty-pTh"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dLB-ZR-9iE">
+                                <rect key="frame" x="0.0" y="156" width="375" height="511"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="CoY-AR-eqx" id="lf9-zZ-2Fe"/>
+                                    <outlet property="delegate" destination="CoY-AR-eqx" id="unY-mZ-wj7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nRp-MP-ucL" firstAttribute="leading" secondItem="L8L-OL-S4N" secondAttribute="leading" id="1V4-YT-dzG"/>
+                            <constraint firstItem="dLB-ZR-9iE" firstAttribute="top" secondItem="nRp-MP-ucL" secondAttribute="bottom" id="22x-um-T7A"/>
+                            <constraint firstItem="L8L-OL-S4N" firstAttribute="top" secondItem="ld5-Ph-VKy" secondAttribute="bottom" constant="43" id="3GH-iV-nkc"/>
+                            <constraint firstItem="L8L-OL-S4N" firstAttribute="trailing" secondItem="nRp-MP-ucL" secondAttribute="trailing" id="4L9-2L-hlU"/>
+                            <constraint firstItem="ld5-Ph-VKy" firstAttribute="top" secondItem="u5R-qm-WGg" secondAttribute="top" constant="20" id="5P8-qY-Dxq"/>
+                            <constraint firstItem="dLB-ZR-9iE" firstAttribute="leading" secondItem="u5R-qm-WGg" secondAttribute="leading" id="5SE-26-Huv"/>
+                            <constraint firstItem="u5R-qm-WGg" firstAttribute="trailing" secondItem="ld5-Ph-VKy" secondAttribute="trailing" constant="20" id="DxX-9N-DoT"/>
+                            <constraint firstItem="u5R-qm-WGg" firstAttribute="trailing" secondItem="ld5-Ph-VKy" secondAttribute="trailing" constant="20" id="dng-uh-N0a"/>
+                            <constraint firstItem="L8L-OL-S4N" firstAttribute="leading" secondItem="ld5-Ph-VKy" secondAttribute="leading" id="evM-Ih-GFZ"/>
+                            <constraint firstItem="ld5-Ph-VKy" firstAttribute="leading" secondItem="u5R-qm-WGg" secondAttribute="leading" constant="20" id="fiE-UN-2x9"/>
+                            <constraint firstItem="nRp-MP-ucL" firstAttribute="top" secondItem="L8L-OL-S4N" secondAttribute="bottom" constant="12" id="j7U-e6-ih3"/>
+                            <constraint firstItem="u5R-qm-WGg" firstAttribute="trailing" secondItem="dLB-ZR-9iE" secondAttribute="trailing" id="qWU-sY-VvT"/>
+                            <constraint firstItem="u5R-qm-WGg" firstAttribute="bottom" secondItem="dLB-ZR-9iE" secondAttribute="bottom" id="uwp-SH-0sS"/>
+                            <constraint firstItem="L8L-OL-S4N" firstAttribute="trailing" secondItem="ld5-Ph-VKy" secondAttribute="trailing" id="zKb-6I-kxk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u5R-qm-WGg"/>
+                    </view>
+                    <connections>
+                        <outlet property="placeTextField" destination="L8L-OL-S4N" id="vfW-j4-sqe"/>
+                        <outlet property="tableView" destination="dLB-ZR-9iE" id="Oei-PY-8yC"/>
+                        <outlet property="titleLabel" destination="ld5-Ph-VKy" id="yeo-tY-DbY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vVF-CM-wHB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="85"/>
+        </scene>
+    </scenes>
+</document>

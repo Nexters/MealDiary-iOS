@@ -97,15 +97,26 @@ class SelectPhotoViewController: UIViewController {
     @objc func completeSelect() {
         
     }
+    
+    public var topDistance : CGFloat{
+        get{
+            if self.navigationController != nil && !self.navigationController!.navigationBar.isTranslucent{
+                return 0
+            }else{
+                let barHeight=self.navigationController?.navigationBar.frame.height ?? 0
+                let statusBarHeight = UIApplication.shared.isStatusBarHidden ? CGFloat(0) : UIApplication.shared.statusBarFrame.height
+                return barHeight + statusBarHeight
+            }
+        }
+    }
 }
 
 extension SelectPhotoViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        let height = navigationController!.navigationBar.frame.height
         setCollectionView()
         setNavigationBar()
-        titleLabel.setOrangeUnderLineView(yConst: height)
+        titleLabel.setOrangeUnderLine()
         PHPhotoLibrary.requestAuthorization({
             (newStatus) in
             if newStatus ==  PHAuthorizationStatus.authorized {
@@ -137,4 +148,3 @@ extension SelectPhotoViewController: UICollectionViewDelegateFlowLayout {
         return 1
     }
 }
-

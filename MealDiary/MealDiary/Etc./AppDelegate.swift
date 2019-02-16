@@ -26,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
             statusBar.backgroundColor = UIColor.white
         }
+    UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
+    UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: UIControl.State.highlighted)
+        
         return true
     }
 
