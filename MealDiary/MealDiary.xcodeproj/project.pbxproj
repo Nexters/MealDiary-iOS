@@ -30,7 +30,19 @@
 		04821FC32206A1FE002001B9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FC22206A1FE002001B9 /* DetailViewController.swift */; };
 		04821FC52206C043002001B9 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FC42206C043002001B9 /* MapManager.swift */; };
 		04821FC72206CD6A002001B9 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FC62206CD6A002001B9 /* View+Ext.swift */; };
-		6D026A0B20BDC27574ACFFCA /* Pods_MealDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */; };
+		74CEB3D5816DF31F15405F7D /* Pods_MealDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CF042393B0990316350549 /* Pods_MealDiary.framework */; };
+		9E6BF10E22073C56002B8CD7 /* PlaceListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6BF10C22073C56002B8CD7 /* PlaceListTableViewCell.swift */; };
+		9E6BF10F22073C56002B8CD7 /* PlaceListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF10D22073C56002B8CD7 /* PlaceListTableViewCell.xib */; };
+		9E6BF11122073C65002B8CD7 /* WritePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6BF11022073C65002B8CD7 /* WritePlaceViewController.swift */; };
+		9E6BF11322073C8C002B8CD7 /* WritePlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF11222073C8C002B8CD7 /* WritePlace.storyboard */; };
+		9E6BF11922073F6C002B8CD7 /* Spoqa Han Sans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF11522073F69002B8CD7 /* Spoqa Han Sans Bold.ttf */; };
+		9E6BF11A22073F6C002B8CD7 /* Spoqa Han Sans Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF11622073F6A002B8CD7 /* Spoqa Han Sans Thin.ttf */; };
+		9E6BF11B22073F6C002B8CD7 /* Spoqa Han Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF11722073F6B002B8CD7 /* Spoqa Han Sans Regular.ttf */; };
+		9E6BF11C22073F6C002B8CD7 /* Spoqa Han Sans Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF11822073F6C002B8CD7 /* Spoqa Han Sans Light.ttf */; };
+		9E6BF12522084B19002B8CD7 /* WriteMealDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF12422084B19002B8CD7 /* WriteMealDiary.storyboard */; };
+		9E6BF12722084F13002B8CD7 /* WriteMealDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6BF12622084F13002B8CD7 /* WriteMealDiaryViewController.swift */; };
+		9E6BF12A220859CE002B8CD7 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6BF128220859CE002B8CD7 /* TagTableViewCell.swift */; };
+		9E6BF12B220859CE002B8CD7 /* TagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF129220859CE002B8CD7 /* TagTableViewCell.xib */; };
 		CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */; };
 		CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */; };
 		CE15BA9E21F5EB0B00FD69F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */; };
@@ -79,9 +91,26 @@
 		04821FC22206A1FE002001B9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		04821FC42206C043002001B9 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		04821FC62206CD6A002001B9 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
 		38679EB5624B80F2BB6818CD /* Pods-MealDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.release.xcconfig"; sourceTree = "<group>"; };
 		4558CCC9DA378A8DBF81E8CB /* Pods-MealDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+=======
+		749309BB819217D2379C3FAC /* Pods-MealDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.debug.xcconfig"; sourceTree = "<group>"; };
+		9E6BF10C22073C56002B8CD7 /* PlaceListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListTableViewCell.swift; sourceTree = "<group>"; };
+		9E6BF10D22073C56002B8CD7 /* PlaceListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceListTableViewCell.xib; sourceTree = "<group>"; };
+		9E6BF11022073C65002B8CD7 /* WritePlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritePlaceViewController.swift; sourceTree = "<group>"; };
+		9E6BF11222073C8C002B8CD7 /* WritePlace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WritePlace.storyboard; sourceTree = "<group>"; };
+		9E6BF11522073F69002B8CD7 /* Spoqa Han Sans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Bold.ttf"; sourceTree = "<group>"; };
+		9E6BF11622073F6A002B8CD7 /* Spoqa Han Sans Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Thin.ttf"; sourceTree = "<group>"; };
+		9E6BF11722073F6B002B8CD7 /* Spoqa Han Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Regular.ttf"; sourceTree = "<group>"; };
+		9E6BF11822073F6C002B8CD7 /* Spoqa Han Sans Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Light.ttf"; sourceTree = "<group>"; };
+		9E6BF12422084B19002B8CD7 /* WriteMealDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteMealDiary.storyboard; sourceTree = "<group>"; };
+		9E6BF12622084F13002B8CD7 /* WriteMealDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMealDiaryViewController.swift; sourceTree = "<group>"; };
+		9E6BF128220859CE002B8CD7 /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
+		9E6BF129220859CE002B8CD7 /* TagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagTableViewCell.xib; sourceTree = "<group>"; };
+		B9A4AEB05FC5E255FE76E7D8 /* Pods-MealDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.release.xcconfig"; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		CE15BA9521F5EB0B00FD69F7 /* MealDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +281,11 @@
 				CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */,
 				04821FC22206A1FE002001B9 /* DetailViewController.swift */,
 				04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */,
+<<<<<<< Updated upstream
+=======
+				9E6BF11022073C65002B8CD7 /* WritePlaceViewController.swift */,
+				9E6BF12622084F13002B8CD7 /* WriteMealDiaryViewController.swift */,
+>>>>>>> Stashed changes
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -262,6 +296,11 @@
 				CE15BAA121F5EB0F00FD69F7 /* LaunchScreen.storyboard */,
 				CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */,
 				04821FAD21FC04DD002001B9 /* SelectPhoto.storyboard */,
+<<<<<<< Updated upstream
+=======
+				9E6BF11222073C8C002B8CD7 /* WritePlace.storyboard */,
+				9E6BF12422084B19002B8CD7 /* WriteMealDiary.storyboard */,
+>>>>>>> Stashed changes
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -286,6 +325,8 @@
 				CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */,
 				04821FAF21FC2087002001B9 /* SelectPhotoCollectionViewCell.swift */,
 				04821FB021FC2087002001B9 /* SelectPhotoCollectionViewCell.xib */,
+				9E6BF128220859CE002B8CD7 /* TagTableViewCell.swift */,
+				9E6BF129220859CE002B8CD7 /* TagTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -398,6 +439,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E6BF12B220859CE002B8CD7 /* TagTableViewCell.xib in Resources */,
 				CE15BAB321F5EEAF00FD69F7 /* MainHeaderView.xib in Resources */,
 				04821FA821FC040B002001B9 /* NotoSansCJKkr-Light.otf in Resources */,
 				CE15BAA321F5EB0F00FD69F7 /* LaunchScreen.storyboard in Resources */,
@@ -413,8 +455,14 @@
 				CE15BABD21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib in Resources */,
 				04821FAB21FC040B002001B9 /* NotoSansCJKkr-Regular.otf in Resources */,
 				04821FB221FC2087002001B9 /* SelectPhotoCollectionViewCell.xib in Resources */,
+<<<<<<< Updated upstream
 				04821FA921FC040B002001B9 /* NotoSansCJKkr-Black.otf in Resources */,
 				04821FA421FC040B002001B9 /* NotoSansMonoCJKkr-Regular.otf in Resources */,
+=======
+				9E6BF12522084B19002B8CD7 /* WriteMealDiary.storyboard in Resources */,
+				9E6BF11A22073F6C002B8CD7 /* Spoqa Han Sans Thin.ttf in Resources */,
+				9E6BF11322073C8C002B8CD7 /* WritePlace.storyboard in Resources */,
+>>>>>>> Stashed changes
 				CE15BA9E21F5EB0B00FD69F7 /* Main.storyboard in Resources */,
 				04821FA621FC040B002001B9 /* NotoSansCJKkr-Medium.otf in Resources */,
 			);
@@ -472,8 +520,10 @@
 			files = (
 				04821FBB2205E338002001B9 /* Label+Ext.swift in Sources */,
 				04821FC52206C043002001B9 /* MapManager.swift in Sources */,
+				9E6BF12722084F13002B8CD7 /* WriteMealDiaryViewController.swift in Sources */,
 				04821FC72206CD6A002001B9 /* View+Ext.swift in Sources */,
 				CE15BABC21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift in Sources */,
+				9E6BF12A220859CE002B8CD7 /* TagTableViewCell.swift in Sources */,
 				CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */,
 				04821F9921FBFDEF002001B9 /* Color+Ext.swift in Sources */,
 				CE15BAC121F6070000FD69F7 /* FilterView.swift in Sources */,
@@ -635,7 +685,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< Updated upstream
 				DEVELOPMENT_TEAM = B6ZBD6VFGD;
+=======
+				DEVELOPMENT_TEAM = N598FBZXVH;
+				ENABLE_BITCODE = NO;
+>>>>>>> Stashed changes
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
@@ -660,7 +715,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< Updated upstream
 				DEVELOPMENT_TEAM = B6ZBD6VFGD;
+=======
+				DEVELOPMENT_TEAM = N598FBZXVH;
+				ENABLE_BITCODE = NO;
+>>>>>>> Stashed changes
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",

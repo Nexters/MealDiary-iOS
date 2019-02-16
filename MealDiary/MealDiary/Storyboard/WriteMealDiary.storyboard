@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Spoqa Han Sans Bold.ttf">
+            <string>SpoqaHanSans-Bold</string>
+        </array>
+        <array key="Spoqa Han Sans Regular.ttf">
+            <string>SpoqaHanSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Write Meal Diary View Controller-->
+        <scene sceneID="fnU-6F-Zwh">
+            <objects>
+                <viewController storyboardIdentifier="WriteMealDiaryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gx7-KO-DyZ" customClass="WriteMealDiaryViewController" customModule="MealDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cr2-S7-PeW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 적는게 남는 거야" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bo-pz-Rm0">
+                                <rect key="frame" x="20" y="40" width="335" height="36"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="75w-Qg-bKG">
+                                <rect key="frame" x="20" y="119" width="335" height="24"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" textContentType="location"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gx7-KO-DyZ" id="64x-ZA-omf"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQl-T3-OAd" userLabel="seperator">
+                                <rect key="frame" x="20" y="155" width="335" height="1"/>
+                                <color key="backgroundColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="nqy-qF-p8w"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="#태그" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bVg-vO-bwq">
+                                <rect key="frame" x="20" y="170" width="335" height="24"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" textContentType="location"/>
+                                <connections>
+                                    <action selector="tagTextFieldEditingChanged:" destination="gx7-KO-DyZ" eventType="editingChanged" id="yiI-fl-Kpf"/>
+                                    <outlet property="delegate" destination="gx7-KO-DyZ" id="4Qq-Yf-a4D"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgI-tB-Odf" userLabel="seperator">
+                                <rect key="frame" x="20" y="206" width="335" height="1"/>
+                                <color key="backgroundColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="YbC-0q-teh"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qUV-wB-HW8">
+                                <rect key="frame" x="0.0" y="207" width="375" height="460"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="gx7-KO-DyZ" id="Dy2-fB-tI8"/>
+                                    <outlet property="delegate" destination="gx7-KO-DyZ" id="B70-AT-Pf4"/>
+                                </connections>
+                            </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="식후감" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P4W-ql-ct6">
+                                <rect key="frame" x="20" y="221" width="335" height="430"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gx7-KO-DyZ" id="XO7-1T-acK"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qUV-wB-HW8" firstAttribute="top" secondItem="ZgI-tB-Odf" secondAttribute="bottom" id="0Pl-2Y-lq3"/>
+                            <constraint firstItem="vQl-T3-OAd" firstAttribute="trailing" secondItem="P4W-ql-ct6" secondAttribute="trailing" id="2XS-Fd-vwV"/>
+                            <constraint firstItem="2Bo-pz-Rm0" firstAttribute="leading" secondItem="fPc-MH-h1H" secondAttribute="leading" constant="20" id="APX-C1-B1M"/>
+                            <constraint firstItem="P4W-ql-ct6" firstAttribute="leading" secondItem="vQl-T3-OAd" secondAttribute="leading" id="CJD-MG-pK6"/>
+                            <constraint firstItem="ZgI-tB-Odf" firstAttribute="leading" secondItem="bVg-vO-bwq" secondAttribute="leading" id="CVO-Vi-TTr"/>
+                            <constraint firstItem="fPc-MH-h1H" firstAttribute="bottom" secondItem="qUV-wB-HW8" secondAttribute="bottom" id="DdG-03-UG7"/>
+                            <constraint firstItem="vQl-T3-OAd" firstAttribute="top" secondItem="75w-Qg-bKG" secondAttribute="bottom" constant="12" id="HJt-0L-qXo"/>
+                            <constraint firstItem="ZgI-tB-Odf" firstAttribute="top" secondItem="bVg-vO-bwq" secondAttribute="bottom" constant="12" id="Kiv-Na-HL7"/>
+                            <constraint firstItem="fPc-MH-h1H" firstAttribute="bottom" secondItem="P4W-ql-ct6" secondAttribute="bottom" constant="16" id="OBe-sT-by9"/>
+                            <constraint firstItem="bVg-vO-bwq" firstAttribute="trailing" secondItem="ZgI-tB-Odf" secondAttribute="trailing" id="STY-BR-Tml"/>
+                            <constraint firstItem="75w-Qg-bKG" firstAttribute="leading" secondItem="2Bo-pz-Rm0" secondAttribute="leading" id="YYV-IX-TKd"/>
+                            <constraint firstItem="bVg-vO-bwq" firstAttribute="top" secondItem="vQl-T3-OAd" secondAttribute="bottom" constant="14" id="ZpX-5T-t5u"/>
+                            <constraint firstItem="qUV-wB-HW8" firstAttribute="trailing" secondItem="fPc-MH-h1H" secondAttribute="trailing" id="aZK-YB-qE3"/>
+                            <constraint firstItem="fPc-MH-h1H" firstAttribute="trailing" secondItem="2Bo-pz-Rm0" secondAttribute="trailing" constant="20" id="bQM-RG-hd8"/>
+                            <constraint firstItem="P4W-ql-ct6" firstAttribute="top" secondItem="ZgI-tB-Odf" secondAttribute="bottom" constant="14" id="bQd-Nu-7gd"/>
+                            <constraint firstItem="vQl-T3-OAd" firstAttribute="trailing" secondItem="bVg-vO-bwq" secondAttribute="trailing" id="bXp-05-91T"/>
+                            <constraint firstItem="2Bo-pz-Rm0" firstAttribute="trailing" secondItem="75w-Qg-bKG" secondAttribute="trailing" id="ff5-jQ-oDh"/>
+                            <constraint firstItem="vQl-T3-OAd" firstAttribute="leading" secondItem="75w-Qg-bKG" secondAttribute="leading" id="iIp-cT-toB"/>
+                            <constraint firstItem="75w-Qg-bKG" firstAttribute="top" secondItem="2Bo-pz-Rm0" secondAttribute="bottom" constant="43" id="kRY-iF-AZ4"/>
+                            <constraint firstItem="2Bo-pz-Rm0" firstAttribute="top" secondItem="fPc-MH-h1H" secondAttribute="top" constant="20" id="lO8-B4-Sqw"/>
+                            <constraint firstItem="75w-Qg-bKG" firstAttribute="trailing" secondItem="vQl-T3-OAd" secondAttribute="trailing" id="mPT-S9-gPU"/>
+                            <constraint firstItem="qUV-wB-HW8" firstAttribute="leading" secondItem="fPc-MH-h1H" secondAttribute="leading" id="qZy-Vs-cXr"/>
+                            <constraint firstItem="bVg-vO-bwq" firstAttribute="leading" secondItem="vQl-T3-OAd" secondAttribute="leading" id="rhp-xa-MrO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fPc-MH-h1H"/>
+                    </view>
+                    <connections>
+                        <outlet property="mealDiaryTextView" destination="P4W-ql-ct6" id="a01-wl-Aff"/>
+                        <outlet property="tableView" destination="qUV-wB-HW8" id="GFP-ax-9To"/>
+                        <outlet property="tagTextField" destination="bVg-vO-bwq" id="VZM-W5-2Rc"/>
+                        <outlet property="titleLabel" destination="2Bo-pz-Rm0" id="m7F-oq-lMx"/>
+                        <outlet property="titleTextField" destination="75w-Qg-bKG" id="vAt-3d-wRD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TL5-Bd-yT1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="84.107946026986511"/>
+        </scene>
+    </scenes>
+</document>
