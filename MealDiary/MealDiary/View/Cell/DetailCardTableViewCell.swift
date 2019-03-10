@@ -24,9 +24,6 @@ class DetailCardTableViewCell: UITableViewCell {
     var card: ContentCard?
     
     static let identifier = "DetailCardTableViewCell"
-//    let underlineAttributes : [NSAttributedString.Key: Any] = [
-//        NSAttributedString.Key.foregroundColor : UIColor.gray,
-//        NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue]
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

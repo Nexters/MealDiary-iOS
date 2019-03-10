@@ -43,7 +43,7 @@ class SearchTableViewCell: UITableViewCell {
         }
         titleLabel.text = card.titleText
         var hashTag = ""
-        card.hashTagList.forEach { hashTag += ("#" + $0 + " ") }
+        card.hashTagList.forEach { hashTag += ($0 + " ") }
         hashTagLabel.text = hashTag
         restaurantNameLabel.text = card.restaurantName
         if card.restaurantName == "" {

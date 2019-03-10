@@ -154,9 +154,6 @@ class WriteDiaryViewController: UIViewController {
         
         setUpPlaceHolder()
         
-//        scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-//        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-        
         titleTextField.frame = CGRect(x: 30, y: 0, width: view.frame.width - 60, height: 48)
         bottomView1.frame = CGRect(x: 20, y: titleTextField.frame.origin.y + titleTextField.frame.height, width: self.view.frame.width - 40, height: 1)
         bottomView1.backgroundColor = UIColor.paleGray
@@ -266,7 +263,6 @@ class WriteDiaryViewController: UIViewController {
             Global.shared.detailText = self.textView.text
             Global.shared.hashTagList = self.hashTagArray
             Global.shared.restaurantName = self.restaurantTextField.text ?? ""
-            
             Global.shared.restaurantLatitude = 0
             Global.shared.restaurantLongitude = 0
             //
@@ -447,10 +443,6 @@ extension WriteDiaryViewController: UITextFieldDelegate {
         if textField == titleTextField {
             bottomView1.backgroundColor = UIColor.darkGray
         } else if textField == hashTagTextField {
-            if textField.text == "" {
-                textField.text = "#"
-            }
-
             bottomView3.backgroundColor = UIColor.darkGray
             tagTableView.isHidden = false
         } else {
