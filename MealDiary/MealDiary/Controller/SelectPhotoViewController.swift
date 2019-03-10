@@ -20,6 +20,7 @@ class SelectPhotoViewController: UIViewController {
     let nextButton = UIButton(type: .system)
     let disposeBag = DisposeBag()
     var checkedPhotos: [Photo] = []
+    var firstLoad: [Int: Bool] = [:]
     
     func setCollectionView() {
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
@@ -38,14 +39,35 @@ class SelectPhotoViewController: UIViewController {
             } else if let photo = photo as? Photo {
                 if let data = photo.data {
                     cell.setUp(with: data, assetIdentifier: photo.identifier)
-                    let indexPath = IndexPath(item: item, section: 0)
-                    var paths = self.selectedIndexPaths.value
-                    paths.append(indexPath)
-                    self.selectedIndexPaths.accept(paths)
-                    
-                    let index = paths.firstIndex(of: indexPath) ?? 0
-                    self.dictionary[indexPath.item] = index + 1
-                    cell.check(index: index + 1)
+                    //
+                    if self.firstLoad[item] ?? true {
+                        let indexPath = IndexPath(item: item, section: 0)
+                        var paths = self.selectedIndexPaths.value
+                        paths.append(indexPath)
+                        self.selectedIndexPaths.accept(paths)
+
+                        let index = paths.firstIndex(of: indexPath) ?? 0
+                        self.dictionary[indexPath.item] = index + 1
+                        cell.check(index: index + 1)
+
+                        self.checkedPhotos.append(photo)
+                        
+                        self.nextButton.isEnabled = true
+                        self.firstLoad[item] = false
+                    } else {
+                        let indexPath = IndexPath(item: item, section: 0)
+                        let paths = self.selectedIndexPaths.value
+                        
+                        if paths.contains(indexPath) {
+                            let index = paths.firstIndex(of: indexPath) ?? 0
+                            self.nextButton.isEnabled = true
+                            cell.check(index: index + 1)
+                        } else {
+                            
+                            self.checkedPhotos = self.checkedPhotos.filter{ $0.identifier != photo.identifier }
+                            cell.uncheck()
+                        }
+                    }
                 }
             }
             
@@ -68,6 +90,9 @@ class SelectPhotoViewController: UIViewController {
                     }
                     
                     cell.uncheck()
+                    
+                    let photo = cell.getPhoto()
+                    self.checkedPhotos = self.checkedPhotos.filter{ $0.identifier != photo.identifier }
                 } else {
                     var selectedIndexPaths = self.selectedIndexPaths.value
                     selectedIndexPaths.append(indexPath)
@@ -76,11 +101,13 @@ class SelectPhotoViewController: UIViewController {
                     if selectedIndexPaths.count != 0 {
                         self.nextButton.isEnabled = true
                     }
+                    
+                    let photo = cell.getPhoto()
+                    self.checkedPhotos.append(photo)
                 }
                 
                 
-                let photo = cell.getPhoto()
-                self.checkedPhotos.append(photo)
+                
                 
             }).disposed(by: disposeBag)
         
@@ -101,6 +128,9 @@ class SelectPhotoViewController: UIViewController {
                     }
                     
                     cell.uncheck()
+                    
+                    let photo = cell.getPhoto()
+                    self.checkedPhotos = self.checkedPhotos.filter{ $0.identifier != photo.identifier }
                 } else {
                     var selectedIndexPaths = self.selectedIndexPaths.value
                     selectedIndexPaths.append(indexPath)
@@ -109,11 +139,12 @@ class SelectPhotoViewController: UIViewController {
                     if selectedIndexPaths.count != 0 {
                         self.nextButton.isEnabled = true
                     }
+                    
+                    let photo = cell.getPhoto()
+                    self.checkedPhotos.append(photo)
                 }
                 
                 
-                let photo = cell.getPhoto()
-                self.checkedPhotos = self.checkedPhotos.filter{ $0.identifier != photo.identifier }
                 
             }).disposed(by: disposeBag)
 
@@ -148,28 +179,6 @@ class SelectPhotoViewController: UIViewController {
     }
     
     @objc func completeSelect() {
-        
-//        var photos: [Photo] = []
-//        for index in selectedIndexPaths.value {
-//
-//            if let photo = self.photos.value[index.item] as? Photo {
-//                photos.append(photo)
-//            } else if let asset = self.photos.value[index.item] as? PHAsset {
-//
-//            }
-        
-//            if let cell = collectionView.cellForItem(at: index) as? SelectPhotoCollectionViewCell {
-//                if let data = cell.data {
-//                    let identifier = cell.photo.localIdentifier
-//                    let photo = Photo(identifier: identifier, data: data)
-//                    photos.append(photo)
-//                } else {
-//                    print(cell.image)
-//                }
-//            }
-            
-//        }
-    
         Global.shared.photos = checkedPhotos
         
         let storyBoard = UIStoryboard(name: "Write", bundle: nil)
