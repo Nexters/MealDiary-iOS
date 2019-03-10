@@ -20,6 +20,6 @@ class FilterView: UIView {
     func setUp(frame: CGRect) {
         self.frame = frame
         filterLabel.frame = CGRect(x: 20, y: 0, width: 50, height: frame.height)
-        filterButton.frame = CGRect(x: 20, y: 0, width: 60, height: frame.height)
+        filterButton.frame = CGRect(x: 20, y: 0, width: 100, height: frame.height)
     }
 }

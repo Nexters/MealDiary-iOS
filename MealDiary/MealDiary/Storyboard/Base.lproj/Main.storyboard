@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Spoqa Han Sans Bold.ttf">
+            <string>SpoqaHanSans-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -23,13 +28,60 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7AZ-Wm-8ac">
+                                <rect key="frame" x="0.0" y="64" width="375" height="94"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="7lI-o2-8Mr">
+                                        <rect key="frame" x="20" y="5" width="200" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="ghp-bc-f8g"/>
+                                        </constraints>
+                                        <string key="text">먹고,
+적는게 남는거야.</string>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kwc-oP-s9e">
+                                        <rect key="frame" x="251" y="22" width="104" height="46"/>
+                                        <color key="backgroundColor" red="0.93208950759999998" green="0.49610173699999999" blue="0.39210724829999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="104" id="HKZ-Qr-EOH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="18"/>
+                                        <state key="normal" title="+ 식후감">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tabWriteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wih-Oj-t77"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="7lI-o2-8Mr" firstAttribute="top" secondItem="7AZ-Wm-8ac" secondAttribute="top" constant="5" id="4go-TJ-hpV"/>
+                                    <constraint firstItem="7lI-o2-8Mr" firstAttribute="leading" secondItem="7AZ-Wm-8ac" secondAttribute="leading" constant="20" id="7n7-EO-Jx8"/>
+                                    <constraint firstAttribute="bottom" secondItem="Kwc-oP-s9e" secondAttribute="bottom" constant="26" id="DhH-eK-5bO"/>
+                                    <constraint firstAttribute="bottom" secondItem="7lI-o2-8Mr" secondAttribute="bottom" constant="23" id="Mkq-hP-Dn7"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kwc-oP-s9e" secondAttribute="trailing" constant="20" id="dqd-K7-6De"/>
+                                    <constraint firstItem="Kwc-oP-s9e" firstAttribute="top" secondItem="7AZ-Wm-8ac" secondAttribute="top" constant="22" id="k2W-x8-gDk"/>
+                                    <constraint firstAttribute="height" constant="94" id="uCL-iV-U5Y"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7AZ-Wm-8ac" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rPn-Yt-N6G"/>
+                            <constraint firstItem="7AZ-Wm-8ac" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tdp-op-s8q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7AZ-Wm-8ac" secondAttribute="trailing" id="xvK-yW-9vG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="XTf-A2-aP9"/>
                     <connections>
+                        <outlet property="headerView" destination="7AZ-Wm-8ac" id="s2V-Pg-RlZ"/>
                         <outlet property="tableView" destination="Bob-Nb-3zV" id="DBq-6f-k1o"/>
+                        <outlet property="writeButton" destination="Kwc-oP-s9e" id="KvN-dH-wWJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -67,6 +119,49 @@
             </objects>
             <point key="canvasLocation" x="1941.5999999999999" y="-43.628185907046479"/>
         </scene>
+        <!--Big Image View Controller-->
+        <scene sceneID="KLU-Nv-qCu">
+            <objects>
+                <viewController storyboardIdentifier="BigImageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bQS-aE-Sdn" customClass="BigImageViewController" customModule="MealDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MkT-Tz-gvL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pU-lb-GLW">
+                                <rect key="frame" x="330" y="35" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="7K2-GY-ySC"/>
+                                    <constraint firstAttribute="height" constant="30" id="LUY-rg-YRM"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="pressCloseButton:" destination="bQS-aE-Sdn" eventType="touchUpInside" id="ofl-T4-kJe"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L2B-u7-Sr3">
+                                <rect key="frame" x="0.0" y="85" width="375" height="552"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="L2B-u7-Sr3" firstAttribute="top" secondItem="2pU-lb-GLW" secondAttribute="bottom" constant="20" id="6ES-K9-JKx"/>
+                            <constraint firstItem="lGb-FC-dUK" firstAttribute="trailing" secondItem="2pU-lb-GLW" secondAttribute="trailing" constant="15" id="HcZ-vj-SAE"/>
+                            <constraint firstItem="L2B-u7-Sr3" firstAttribute="trailing" secondItem="lGb-FC-dUK" secondAttribute="trailing" id="NCq-ih-Wxz"/>
+                            <constraint firstItem="L2B-u7-Sr3" firstAttribute="leading" secondItem="lGb-FC-dUK" secondAttribute="leading" id="P5M-hT-GDv"/>
+                            <constraint firstItem="lGb-FC-dUK" firstAttribute="bottom" secondItem="L2B-u7-Sr3" secondAttribute="bottom" constant="30" id="hbY-EZ-TmL"/>
+                            <constraint firstItem="2pU-lb-GLW" firstAttribute="top" secondItem="lGb-FC-dUK" secondAttribute="top" constant="15" id="w8v-EF-O1W"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lGb-FC-dUK"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="L2B-u7-Sr3" id="4bT-2y-YZJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kEe-Rt-gfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2682.4000000000001" y="-52.623688155922046"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="COt-MA-Ewx">
             <objects>
@@ -86,5 +181,8 @@
             <point key="canvasLocation" x="500" y="-43.628185907046479"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close" width="491.51998901367188" height="491.51998901367188"/>
+    </resources>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

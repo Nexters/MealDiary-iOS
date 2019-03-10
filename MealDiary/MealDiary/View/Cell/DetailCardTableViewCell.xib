@@ -9,6 +9,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Spoqa Han Sans Bold.ttf">
+            <string>SpoqaHanSans-Bold</string>
+        </array>
+        <array key="Spoqa Han Sans Regular.ttf">
+            <string>SpoqaHanSans-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,7 +28,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="oAP-QH-skh">
-                        <rect key="frame" x="265" y="295.5" width="43" height="33"/>
+                        <rect key="frame" x="287" y="295.5" width="43" height="33"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="43" id="Aaf-4Y-w6Y"/>
                             <constraint firstAttribute="height" constant="33" id="CRy-q7-3we"/>
@@ -30,7 +38,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvr-uy-rfa">
-                        <rect key="frame" x="313" y="304.5" width="13" height="23"/>
+                        <rect key="frame" x="333" y="302.5" width="13" height="23"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="13" id="EXR-X4-LKe"/>
                             <constraint firstAttribute="height" constant="23" id="Sie-EN-Bh5"/>
@@ -39,12 +47,9 @@
                         <color key="textColor" red="1" green="0.45882352939999999" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="빈브라더스 강남점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="0pa-ZK-1nw">
-                        <rect key="frame" x="20" y="295.5" width="235" height="34"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="34" id="QBu-Wz-XK1"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="빈브라더스 강남점" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="0pa-ZK-1nw">
+                        <rect key="frame" x="20" y="298.5" width="257" height="31.5"/>
+                        <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="21"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019.01.27" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3W8-eT-3Xg">
@@ -56,9 +61,12 @@
                         <color key="textColor" red="0.62352941179999999" green="0.64313725489999995" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#대전 #배네딕트 #카이스트" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlZ-oF-5b0">
-                        <rect key="frame" x="20" y="333.5" width="322" height="15"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#대전 #배네딕트 #카이스트" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlZ-oF-5b0">
+                        <rect key="frame" x="20" y="334" width="322" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="ak9-PI-Vzp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="12"/>
                         <color key="textColor" red="0.62352941179999999" green="0.64313725489999995" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -86,33 +94,84 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnP-N8-cTr">
-                        <rect key="frame" x="19" y="368" width="323" height="235"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnP-N8-cTr">
+                        <rect key="frame" x="20" y="407" width="322" height="124.5"/>
                         <string key="text">@David You wouldn't be "replacing" anything, but it really depends on the desired behavior... If you want to use estimated rows height and just reload the indexes below the current visible portion of the table, you can do that like I said using reloadRowsAtIndexPaths</string>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ej8-gB-xTz">
+                        <rect key="frame" x="20" y="374" width="322" height="1"/>
+                        <color key="backgroundColor" red="0.87450980389999999" green="0.89411764709999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="JI6-IU-SfV"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNG-Wd-iVi">
+                        <rect key="frame" x="20" y="561.5" width="322" height="64.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icRestaurant" translatesAutoresizingMaskIntoConstraints="NO" id="kgU-Pw-I7M">
+                                <rect key="frame" x="10" y="7" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="EZA-Gd-GHk"/>
+                                    <constraint firstAttribute="height" constant="24" id="zXB-DW-qKW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Vq-dd-cqZ">
+                                <rect key="frame" x="44" y="7" width="268" height="22.5"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="15"/>
+                                <color key="textColor" red="0.39215686274509803" green="0.40784313725490196" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fo-8s-3aD">
+                                <rect key="frame" x="44" y="39.5" width="268" height="18"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="12"/>
+                                <color key="textColor" red="0.62352941176470589" green="0.64313725490196072" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.96862745100000003" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1Vq-dd-cqZ" firstAttribute="top" secondItem="pNG-Wd-iVi" secondAttribute="top" constant="7" id="4M2-mM-Y2m"/>
+                            <constraint firstItem="kgU-Pw-I7M" firstAttribute="top" secondItem="pNG-Wd-iVi" secondAttribute="top" constant="7" id="Ala-5d-0YS"/>
+                            <constraint firstAttribute="bottom" secondItem="4fo-8s-3aD" secondAttribute="bottom" constant="7" id="KLz-EN-v2I"/>
+                            <constraint firstItem="4fo-8s-3aD" firstAttribute="trailing" secondItem="1Vq-dd-cqZ" secondAttribute="trailing" id="Ksc-vx-E2B"/>
+                            <constraint firstAttribute="trailing" secondItem="1Vq-dd-cqZ" secondAttribute="trailing" constant="10" id="Otb-s5-dxo"/>
+                            <constraint firstItem="4fo-8s-3aD" firstAttribute="leading" secondItem="1Vq-dd-cqZ" secondAttribute="leading" id="UYW-pj-fIj"/>
+                            <constraint firstItem="kgU-Pw-I7M" firstAttribute="leading" secondItem="pNG-Wd-iVi" secondAttribute="leading" constant="10" id="XnP-F7-W4G"/>
+                            <constraint firstItem="1Vq-dd-cqZ" firstAttribute="leading" secondItem="kgU-Pw-I7M" secondAttribute="trailing" constant="10" id="fnh-1H-WRa"/>
+                            <constraint firstItem="4fo-8s-3aD" firstAttribute="top" secondItem="1Vq-dd-cqZ" secondAttribute="bottom" constant="10" id="pav-GR-rTy"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="3W8-eT-3Xg" secondAttribute="trailing" constant="19" id="0gQ-Si-IG3"/>
+                    <constraint firstItem="pNG-Wd-iVi" firstAttribute="top" secondItem="QnP-N8-cTr" secondAttribute="bottom" constant="30" id="1hO-F6-T9i"/>
                     <constraint firstItem="dzj-Y5-cOi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="38f-Xd-xFs"/>
                     <constraint firstItem="urh-b1-YuP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="52u-9k-tHJ"/>
                     <constraint firstItem="3W8-eT-3Xg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="19" id="8Gc-ay-ivO"/>
+                    <constraint firstItem="QnP-N8-cTr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="BlK-dv-8I4"/>
                     <constraint firstItem="qlZ-oF-5b0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="HF3-hr-KXb"/>
                     <constraint firstItem="3W8-eT-3Xg" firstAttribute="top" secondItem="urh-b1-YuP" secondAttribute="bottom" constant="15" id="Hph-K4-Yj3"/>
-                    <constraint firstItem="uvr-uy-rfa" firstAttribute="leading" secondItem="oAP-QH-skh" secondAttribute="trailing" constant="5" id="Jg4-iu-G38"/>
+                    <constraint firstAttribute="trailing" secondItem="pNG-Wd-iVi" secondAttribute="trailing" constant="20" id="I0e-MJ-Nfh"/>
+                    <constraint firstItem="uvr-uy-rfa" firstAttribute="leading" secondItem="oAP-QH-skh" secondAttribute="trailing" constant="3" id="Jg4-iu-G38"/>
                     <constraint firstAttribute="trailing" secondItem="dzj-Y5-cOi" secondAttribute="trailing" constant="12" id="LIY-Qw-gTE"/>
+                    <constraint firstItem="Ej8-gB-xTz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="OB1-8N-0cL"/>
                     <constraint firstAttribute="trailing" secondItem="urh-b1-YuP" secondAttribute="trailing" id="PLz-Br-fAr"/>
                     <constraint firstItem="0pa-ZK-1nw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Q8v-Uz-Itw"/>
+                    <constraint firstItem="pNG-Wd-iVi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Vkf-CN-gaC"/>
+                    <constraint firstItem="QnP-N8-cTr" firstAttribute="top" secondItem="Ej8-gB-xTz" secondAttribute="bottom" constant="32" id="ZfC-jN-KVk"/>
                     <constraint firstAttribute="trailing" secondItem="qlZ-oF-5b0" secondAttribute="trailing" constant="20" id="aTM-wd-5DW"/>
+                    <constraint firstItem="Ej8-gB-xTz" firstAttribute="top" secondItem="qlZ-oF-5b0" secondAttribute="bottom" constant="5" id="bVz-ds-Nj0"/>
                     <constraint firstItem="oAP-QH-skh" firstAttribute="leading" secondItem="0pa-ZK-1nw" secondAttribute="trailing" constant="10" id="cne-cM-dDk"/>
                     <constraint firstItem="qlZ-oF-5b0" firstAttribute="top" secondItem="0pa-ZK-1nw" secondAttribute="bottom" constant="4" id="dFL-9m-BrH"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="uvr-uy-rfa" secondAttribute="trailing" constant="20" id="dQr-3X-Sty"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="uvr-uy-rfa" secondAttribute="trailing" id="dQr-3X-Sty"/>
+                    <constraint firstAttribute="trailing" secondItem="Ej8-gB-xTz" secondAttribute="trailing" constant="20" id="hvY-3W-E6E"/>
                     <constraint firstItem="oAP-QH-skh" firstAttribute="top" secondItem="3W8-eT-3Xg" secondAttribute="bottom" constant="5" id="lXR-OZ-L2f"/>
-                    <constraint firstItem="0pa-ZK-1nw" firstAttribute="top" secondItem="3W8-eT-3Xg" secondAttribute="bottom" constant="5" id="rF0-QT-Zit"/>
-                    <constraint firstItem="uvr-uy-rfa" firstAttribute="top" secondItem="3W8-eT-3Xg" secondAttribute="bottom" constant="14" id="rOe-0W-DDT"/>
+                    <constraint firstItem="0pa-ZK-1nw" firstAttribute="top" secondItem="3W8-eT-3Xg" secondAttribute="bottom" constant="8" id="rF0-QT-Zit"/>
+                    <constraint firstItem="uvr-uy-rfa" firstAttribute="top" secondItem="3W8-eT-3Xg" secondAttribute="bottom" constant="12" id="rOe-0W-DDT"/>
+                    <constraint firstAttribute="trailing" secondItem="QnP-N8-cTr" secondAttribute="trailing" constant="20" id="xj5-MM-4g7"/>
                     <constraint firstItem="urh-b1-YuP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="y4M-p4-HgZ"/>
                 </constraints>
             </tableViewCellContentView>
@@ -123,10 +182,16 @@
                 <outlet property="dateLabel" destination="3W8-eT-3Xg" id="YCP-Wn-luC"/>
                 <outlet property="detailLabel" destination="QnP-N8-cTr" id="bj2-Cq-5cr"/>
                 <outlet property="hashTagLabel" destination="qlZ-oF-5b0" id="1Wc-uP-yda"/>
+                <outlet property="locationView" destination="pNG-Wd-iVi" id="mU8-hM-lKI"/>
                 <outlet property="pointLabel" destination="oAP-QH-skh" id="BUC-mZ-k46"/>
-                <outlet property="restaurantNameLabel" destination="0pa-ZK-1nw" id="nF3-KB-AzO"/>
+                <outlet property="restaurantLabel" destination="1Vq-dd-cqZ" id="fLg-Vu-QN2"/>
+                <outlet property="restaurantLocation" destination="4fo-8s-3aD" id="dsD-8D-WLM"/>
+                <outlet property="titleTextLabel" destination="0pa-ZK-1nw" id="nF3-KB-AzO"/>
             </connections>
             <point key="canvasLocation" x="174.40000000000001" y="197.00149925037482"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icRestaurant" width="24" height="24"/>
+    </resources>
 </document>

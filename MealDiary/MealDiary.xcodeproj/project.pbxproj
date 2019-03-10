@@ -9,16 +9,7 @@
 /* Begin PBXBuildFile section */
 		04821F9721FBF953002001B9 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821F9621FBF953002001B9 /* String+Ext.swift */; };
 		04821F9921FBFDEF002001B9 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821F9821FBFDEF002001B9 /* Color+Ext.swift */; };
-		04821FA421FC040B002001B9 /* NotoSansMonoCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9B21FC0403002001B9 /* NotoSansMonoCJKkr-Regular.otf */; };
-		04821FA521FC040B002001B9 /* NotoSansCJKkr-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9C21FC0404002001B9 /* NotoSansCJKkr-Thin.otf */; };
-		04821FA621FC040B002001B9 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9D21FC0405002001B9 /* NotoSansCJKkr-Medium.otf */; };
-		04821FA721FC040B002001B9 /* NotoSansCJKkr-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9E21FC0406002001B9 /* NotoSansCJKkr-DemiLight.otf */; };
-		04821FA821FC040B002001B9 /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821F9F21FC0407002001B9 /* NotoSansCJKkr-Light.otf */; };
-		04821FA921FC040B002001B9 /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821FA021FC0408002001B9 /* NotoSansCJKkr-Black.otf */; };
-		04821FAA21FC040B002001B9 /* NotoSansMonoCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821FA121FC0409002001B9 /* NotoSansMonoCJKkr-Bold.otf */; };
-		04821FAB21FC040B002001B9 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821FA221FC040A002001B9 /* NotoSansCJKkr-Regular.otf */; };
-		04821FAC21FC040B002001B9 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04821FA321FC040B002001B9 /* NotoSansCJKkr-Bold.otf */; };
-		04821FAE21FC04DD002001B9 /* SelectPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04821FAD21FC04DD002001B9 /* SelectPhoto.storyboard */; };
+		04821FAE21FC04DD002001B9 /* Rate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04821FAD21FC04DD002001B9 /* Rate.storyboard */; };
 		04821FB121FC2087002001B9 /* SelectPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FAF21FC2087002001B9 /* SelectPhotoCollectionViewCell.swift */; };
 		04821FB221FC2087002001B9 /* SelectPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04821FB021FC2087002001B9 /* SelectPhotoCollectionViewCell.xib */; };
 		04821FB421FC23A4002001B9 /* SelectPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */; };
@@ -28,58 +19,54 @@
 		04821FC02205F0E1002001B9 /* HomeCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FBE2205F0E1002001B9 /* HomeCardTableViewCell.swift */; };
 		04821FC12205F0E1002001B9 /* HomeCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04821FBF2205F0E1002001B9 /* HomeCardTableViewCell.xib */; };
 		04821FC32206A1FE002001B9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FC22206A1FE002001B9 /* DetailViewController.swift */; };
-		04821FC52206C043002001B9 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FC42206C043002001B9 /* MapManager.swift */; };
 		04821FC72206CD6A002001B9 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FC62206CD6A002001B9 /* View+Ext.swift */; };
-		74CEB3D5816DF31F15405F7D /* Pods_MealDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CF042393B0990316350549 /* Pods_MealDiary.framework */; };
-		9E6BF10E22073C56002B8CD7 /* PlaceListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6BF10C22073C56002B8CD7 /* PlaceListTableViewCell.swift */; };
-		9E6BF10F22073C56002B8CD7 /* PlaceListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF10D22073C56002B8CD7 /* PlaceListTableViewCell.xib */; };
-		9E6BF11122073C65002B8CD7 /* WritePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6BF11022073C65002B8CD7 /* WritePlaceViewController.swift */; };
-		9E6BF11322073C8C002B8CD7 /* WritePlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF11222073C8C002B8CD7 /* WritePlace.storyboard */; };
-		9E6BF11922073F6C002B8CD7 /* Spoqa Han Sans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF11522073F69002B8CD7 /* Spoqa Han Sans Bold.ttf */; };
-		9E6BF11A22073F6C002B8CD7 /* Spoqa Han Sans Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF11622073F6A002B8CD7 /* Spoqa Han Sans Thin.ttf */; };
-		9E6BF11B22073F6C002B8CD7 /* Spoqa Han Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF11722073F6B002B8CD7 /* Spoqa Han Sans Regular.ttf */; };
-		9E6BF11C22073F6C002B8CD7 /* Spoqa Han Sans Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF11822073F6C002B8CD7 /* Spoqa Han Sans Light.ttf */; };
-		9E6BF12522084B19002B8CD7 /* WriteMealDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF12422084B19002B8CD7 /* WriteMealDiary.storyboard */; };
-		9E6BF12722084F13002B8CD7 /* WriteMealDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6BF12622084F13002B8CD7 /* WriteMealDiaryViewController.swift */; };
-		9E6BF12A220859CE002B8CD7 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6BF128220859CE002B8CD7 /* TagTableViewCell.swift */; };
-		9E6BF12B220859CE002B8CD7 /* TagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF129220859CE002B8CD7 /* TagTableViewCell.xib */; };
+		04821FCB220847B1002001B9 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FCA220847B1002001B9 /* RateViewController.swift */; };
+		04821FD7220857E2002001B9 /* RateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */; };
+		04821FD8220857E2002001B9 /* RateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04821FD6220857E2002001B9 /* RateCollectionViewCell.xib */; };
+		048C520122192DD80058C5D9 /* WriteDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C520022192DD80058C5D9 /* WriteDiaryViewController.swift */; };
+		048C5203221C3C340058C5D9 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C5202221C3C340058C5D9 /* Global.swift */; };
+		048C5205221C43870058C5D9 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C5204221C43870058C5D9 /* Date.swift */; };
+		04CE88E22218000A009CDAD9 /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DC22180009009CDAD9 /* 2.gif */; };
+		04CE88E32218000A009CDAD9 /* 0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DD22180009009CDAD9 /* 0.gif */; };
+		04CE88E42218000A009CDAD9 /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DE2218000A009CDAD9 /* 1.gif */; };
+		04CE88E52218000A009CDAD9 /* 5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88DF2218000A009CDAD9 /* 5.gif */; };
+		04CE88E62218000A009CDAD9 /* 4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88E02218000A009CDAD9 /* 4.gif */; };
+		04CE88E72218000A009CDAD9 /* 3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88E12218000A009CDAD9 /* 3.gif */; };
+		04CE88EA22180286009CDAD9 /* SplashViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88E922180286009CDAD9 /* SplashViewController1.swift */; };
+		04CE88EC22180299009CDAD9 /* SplashViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88EB22180299009CDAD9 /* SplashViewController2.swift */; };
+		04CE88EE221802BD009CDAD9 /* SplashViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88ED221802BD009CDAD9 /* SplashViewController3.swift */; };
+		04CE88F022180402009CDAD9 /* SplashViewController0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88EF22180401009CDAD9 /* SplashViewController0.swift */; };
+		04CE88F22218059A009CDAD9 /* SplashNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88F12218059A009CDAD9 /* SplashNavigation.swift */; };
+		04CE88F422180854009CDAD9 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88F322180854009CDAD9 /* Search.storyboard */; };
+		04CE88F622180896009CDAD9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88F522180896009CDAD9 /* SearchViewController.swift */; };
+		04CE88F9221812FF009CDAD9 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88F7221812FF009CDAD9 /* SearchTableViewCell.swift */; };
+		04CE88FA221812FF009CDAD9 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88F8221812FF009CDAD9 /* SearchTableViewCell.xib */; };
+		04CE88FD22182421009CDAD9 /* TagHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE88FB22182421009CDAD9 /* TagHistoryTableViewCell.swift */; };
+		04CE88FE22182421009CDAD9 /* TagHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CE88FC22182421009CDAD9 /* TagHistoryTableViewCell.xib */; };
+		04CE890622184898009CDAD9 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CE890522184898009CDAD9 /* Splash.storyboard */; };
+		100F24BFB8F73FB26006FA4E /* Pods_MealDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96029C5ADFCCFF251185FD97 /* Pods_MealDiary.framework */; };
+		9E6BF15C2217D375002B8CD7 /* Write.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6BF15B2217D375002B8CD7 /* Write.storyboard */; };
+		9EF9B6A322202129002E6D8C /* SearchRestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF9B6A122202129002E6D8C /* SearchRestaurantTableViewCell.swift */; };
+		9EF9B6A422202129002E6D8C /* SearchRestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EF9B6A222202129002E6D8C /* SearchRestaurantTableViewCell.xib */; };
 		CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */; };
 		CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */; };
 		CE15BA9E21F5EB0B00FD69F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */; };
 		CE15BAA021F5EB0F00FD69F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE15BA9F21F5EB0F00FD69F7 /* Assets.xcassets */; };
 		CE15BAA321F5EB0F00FD69F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE15BAA121F5EB0F00FD69F7 /* LaunchScreen.storyboard */; };
-		CE15BAB321F5EEAF00FD69F7 /* MainHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE15BAB221F5EEAF00FD69F7 /* MainHeaderView.xib */; };
-		CE15BAB521F5EFCA00FD69F7 /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BAB421F5EFCA00FD69F7 /* MainHeaderView.swift */; };
 		CE15BABC21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BABA21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift */; };
 		CE15BABD21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE15BABB21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib */; };
 		CE15BABF21F5FFC100FD69F7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BABE21F5FFC100FD69F7 /* Card.swift */; };
 		CE15BAC121F6070000FD69F7 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BAC021F6070000FD69F7 /* FilterView.swift */; };
 		CE15BAC321F6073100FD69F7 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE15BAC221F6073100FD69F7 /* FilterView.xib */; };
+		CE3E1CA92234DEDE0055D021 /* BigImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E1CA82234DEDE0055D021 /* BigImageViewController.swift */; };
 		CE443D0F21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE443D0D21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift */; };
 		CE443D1021F76FBE00CB52B0 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */; };
-		CE443DB421FA025500CB52B0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB321FA025500CB52B0 /* OpenGLES.framework */; };
-		CE443DB621FA026200CB52B0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB521FA026200CB52B0 /* SystemConfiguration.framework */; };
-		CE443DB821FA026A00CB52B0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB721FA026A00CB52B0 /* CoreLocation.framework */; };
-		CE443DBA21FA027100CB52B0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DB921FA027100CB52B0 /* QuartzCore.framework */; };
-		CE443DBC21FA02A100CB52B0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DBB21FA02A100CB52B0 /* libxml2.tbd */; };
-		CE443DBE21FA02B400CB52B0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DBD21FA02B400CB52B0 /* libsqlite3.tbd */; };
-		CE443DC021FA02D400CB52B0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DBF21FA02D400CB52B0 /* libc++.tbd */; };
-		CE443DD121FA031300CB52B0 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE443DD021FA031300CB52B0 /* DaumMap.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04821F9621FBF953002001B9 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		04821F9821FBFDEF002001B9 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
-		04821F9B21FC0403002001B9 /* NotoSansMonoCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKkr-Regular.otf"; sourceTree = "<group>"; };
-		04821F9C21FC0404002001B9 /* NotoSansCJKkr-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Thin.otf"; sourceTree = "<group>"; };
-		04821F9D21FC0405002001B9 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
-		04821F9E21FC0406002001B9 /* NotoSansCJKkr-DemiLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-DemiLight.otf"; sourceTree = "<group>"; };
-		04821F9F21FC0407002001B9 /* NotoSansCJKkr-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Light.otf"; sourceTree = "<group>"; };
-		04821FA021FC0408002001B9 /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
-		04821FA121FC0409002001B9 /* NotoSansMonoCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKkr-Bold.otf"; sourceTree = "<group>"; };
-		04821FA221FC040A002001B9 /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
-		04821FA321FC040B002001B9 /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
-		04821FAD21FC04DD002001B9 /* SelectPhoto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectPhoto.storyboard; sourceTree = "<group>"; };
+		04821FAD21FC04DD002001B9 /* Rate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Rate.storyboard; sourceTree = "<group>"; };
 		04821FAF21FC2087002001B9 /* SelectPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		04821FB021FC2087002001B9 /* SelectPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoViewController.swift; sourceTree = "<group>"; };
@@ -89,28 +76,41 @@
 		04821FBE2205F0E1002001B9 /* HomeCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardTableViewCell.swift; sourceTree = "<group>"; };
 		04821FBF2205F0E1002001B9 /* HomeCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCardTableViewCell.xib; sourceTree = "<group>"; };
 		04821FC22206A1FE002001B9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		04821FC42206C043002001B9 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		04821FC62206CD6A002001B9 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
-<<<<<<< Updated upstream
+		04821FCA220847B1002001B9 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
+		04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCollectionViewCell.swift; sourceTree = "<group>"; };
+		04821FD6220857E2002001B9 /* RateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateCollectionViewCell.xib; sourceTree = "<group>"; };
+		048C520022192DD80058C5D9 /* WriteDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryViewController.swift; sourceTree = "<group>"; };
+		048C5202221C3C340058C5D9 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		048C5204221C43870058C5D9 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		04CE88DC22180009009CDAD9 /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2.gif; sourceTree = "<group>"; };
+		04CE88DD22180009009CDAD9 /* 0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 0.gif; sourceTree = "<group>"; };
+		04CE88DE2218000A009CDAD9 /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
+		04CE88DF2218000A009CDAD9 /* 5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 5.gif; sourceTree = "<group>"; };
+		04CE88E02218000A009CDAD9 /* 4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 4.gif; sourceTree = "<group>"; };
+		04CE88E12218000A009CDAD9 /* 3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3.gif; sourceTree = "<group>"; };
+		04CE88E922180286009CDAD9 /* SplashViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController1.swift; sourceTree = "<group>"; };
+		04CE88EB22180299009CDAD9 /* SplashViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController2.swift; sourceTree = "<group>"; };
+		04CE88ED221802BD009CDAD9 /* SplashViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController3.swift; sourceTree = "<group>"; };
+		04CE88EF22180401009CDAD9 /* SplashViewController0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController0.swift; sourceTree = "<group>"; };
+		04CE88F12218059A009CDAD9 /* SplashNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashNavigation.swift; sourceTree = "<group>"; };
+		04CE88F322180854009CDAD9 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		04CE88F522180896009CDAD9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		04CE88F7221812FF009CDAD9 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		04CE88F8221812FF009CDAD9 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		04CE88FB22182421009CDAD9 /* TagHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		04CE88FC22182421009CDAD9 /* TagHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		04CE890522184898009CDAD9 /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Splash.storyboard; path = MealDiary/Splash/Splash.storyboard; sourceTree = SOURCE_ROOT; };
 		38679EB5624B80F2BB6818CD /* Pods-MealDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.release.xcconfig"; sourceTree = "<group>"; };
 		4558CCC9DA378A8DBF81E8CB /* Pods-MealDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.debug.xcconfig"; sourceTree = "<group>"; };
-		BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-=======
-		749309BB819217D2379C3FAC /* Pods-MealDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.debug.xcconfig"; sourceTree = "<group>"; };
-		9E6BF10C22073C56002B8CD7 /* PlaceListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListTableViewCell.swift; sourceTree = "<group>"; };
-		9E6BF10D22073C56002B8CD7 /* PlaceListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceListTableViewCell.xib; sourceTree = "<group>"; };
-		9E6BF11022073C65002B8CD7 /* WritePlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritePlaceViewController.swift; sourceTree = "<group>"; };
-		9E6BF11222073C8C002B8CD7 /* WritePlace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WritePlace.storyboard; sourceTree = "<group>"; };
-		9E6BF11522073F69002B8CD7 /* Spoqa Han Sans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Bold.ttf"; sourceTree = "<group>"; };
-		9E6BF11622073F6A002B8CD7 /* Spoqa Han Sans Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Thin.ttf"; sourceTree = "<group>"; };
-		9E6BF11722073F6B002B8CD7 /* Spoqa Han Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Regular.ttf"; sourceTree = "<group>"; };
-		9E6BF11822073F6C002B8CD7 /* Spoqa Han Sans Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Light.ttf"; sourceTree = "<group>"; };
-		9E6BF12422084B19002B8CD7 /* WriteMealDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteMealDiary.storyboard; sourceTree = "<group>"; };
-		9E6BF12622084F13002B8CD7 /* WriteMealDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMealDiaryViewController.swift; sourceTree = "<group>"; };
-		9E6BF128220859CE002B8CD7 /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
-		9E6BF129220859CE002B8CD7 /* TagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagTableViewCell.xib; sourceTree = "<group>"; };
-		B9A4AEB05FC5E255FE76E7D8 /* Pods-MealDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary.release.xcconfig"; sourceTree = "<group>"; };
->>>>>>> Stashed changes
+		96029C5ADFCCFF251185FD97 /* Pods_MealDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E6BF15B2217D375002B8CD7 /* Write.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Write.storyboard; sourceTree = "<group>"; };
+		9E6BF16E2217EDF1002B8CD7 /* Spoqa Han Sans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Bold.ttf"; sourceTree = "<group>"; };
+		9E6BF16F2217EDF2002B8CD7 /* Spoqa Han Sans Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Thin.ttf"; sourceTree = "<group>"; };
+		9E6BF1702217EDF3002B8CD7 /* Spoqa Han Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Regular.ttf"; sourceTree = "<group>"; };
+		9E6BF1712217EDF4002B8CD7 /* Spoqa Han Sans Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Light.ttf"; sourceTree = "<group>"; };
+		9EF9B6A122202129002E6D8C /* SearchRestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		9EF9B6A222202129002E6D8C /* SearchRestaurantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchRestaurantTableViewCell.xib; sourceTree = "<group>"; };
 		CE15BA9521F5EB0B00FD69F7 /* MealDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -118,32 +118,14 @@
 		CE15BA9F21F5EB0F00FD69F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE15BAA221F5EB0F00FD69F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE15BAA421F5EB0F00FD69F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE15BAB221F5EEAF00FD69F7 /* MainHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainHeaderView.xib; sourceTree = "<group>"; };
-		CE15BAB421F5EFCA00FD69F7 /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
 		CE15BABA21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCardTableViewCell.swift; sourceTree = "<group>"; };
 		CE15BABB21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCardTableViewCell.xib; sourceTree = "<group>"; };
 		CE15BABE21F5FFC100FD69F7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CE15BAC021F6070000FD69F7 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		CE15BAC221F6073100FD69F7 /* FilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
+		CE3E1CA82234DEDE0055D021 /* BigImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigImageViewController.swift; sourceTree = "<group>"; };
 		CE443D0D21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
-		CE443DB321FA025500CB52B0 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		CE443DB521FA026200CB52B0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		CE443DB721FA026A00CB52B0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		CE443DB921FA027100CB52B0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		CE443DBB21FA02A100CB52B0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
-		CE443DBD21FA02B400CB52B0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		CE443DBF21FA02D400CB52B0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		CE443DC821FA031300CB52B0 /* MTMapPOIItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapPOIItem.h; sourceTree = "<group>"; };
-		CE443DC921FA031300CB52B0 /* MTMapCameraUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapCameraUpdate.h; sourceTree = "<group>"; };
-		CE443DCA21FA031300CB52B0 /* MTMapReverseGeoCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapReverseGeoCoder.h; sourceTree = "<group>"; };
-		CE443DCB21FA031300CB52B0 /* MTMapPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapPolyline.h; sourceTree = "<group>"; };
-		CE443DCC21FA031300CB52B0 /* MTMapLocationMarkerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapLocationMarkerItem.h; sourceTree = "<group>"; };
-		CE443DCD21FA031300CB52B0 /* MTMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapView.h; sourceTree = "<group>"; };
-		CE443DCE21FA031300CB52B0 /* MTMapGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapGeometry.h; sourceTree = "<group>"; };
-		CE443DCF21FA031300CB52B0 /* MTMapCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMapCircle.h; sourceTree = "<group>"; };
-		CE443DD021FA031300CB52B0 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
-		CE443DD321FA06AF00CB52B0 /* DaumMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DaumMap-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,15 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE443DC021FA02D400CB52B0 /* libc++.tbd in Frameworks */,
-				CE443DBE21FA02B400CB52B0 /* libsqlite3.tbd in Frameworks */,
-				CE443DD121FA031300CB52B0 /* DaumMap.framework in Frameworks */,
-				CE443DBC21FA02A100CB52B0 /* libxml2.tbd in Frameworks */,
-				CE443DBA21FA027100CB52B0 /* QuartzCore.framework in Frameworks */,
-				CE443DB821FA026A00CB52B0 /* CoreLocation.framework in Frameworks */,
-				CE443DB621FA026200CB52B0 /* SystemConfiguration.framework in Frameworks */,
-				CE443DB421FA025500CB52B0 /* OpenGLES.framework in Frameworks */,
-				6D026A0B20BDC27574ACFFCA /* Pods_MealDiary.framework in Frameworks */,
+				100F24BFB8F73FB26006FA4E /* Pods_MealDiary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,33 +148,42 @@
 				04821FB821FC27F8002001B9 /* Image+Ext.swift */,
 				04821FBA2205E338002001B9 /* Label+Ext.swift */,
 				04821FC62206CD6A002001B9 /* View+Ext.swift */,
+				048C5204221C43870058C5D9 /* Date.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		04821F9A21FC03F4002001B9 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				04821FA021FC0408002001B9 /* NotoSansCJKkr-Black.otf */,
-				04821FA321FC040B002001B9 /* NotoSansCJKkr-Bold.otf */,
-				04821F9E21FC0406002001B9 /* NotoSansCJKkr-DemiLight.otf */,
-				04821F9F21FC0407002001B9 /* NotoSansCJKkr-Light.otf */,
-				04821F9D21FC0405002001B9 /* NotoSansCJKkr-Medium.otf */,
-				04821FA221FC040A002001B9 /* NotoSansCJKkr-Regular.otf */,
-				04821F9C21FC0404002001B9 /* NotoSansCJKkr-Thin.otf */,
-				04821FA121FC0409002001B9 /* NotoSansMonoCJKkr-Bold.otf */,
-				04821F9B21FC0403002001B9 /* NotoSansMonoCJKkr-Regular.otf */,
-			);
-			path = Font;
 			sourceTree = "<group>";
 		};
 		04821FB521FC267E002001B9 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				04821FB621FC268C002001B9 /* AssetManager.swift */,
-				04821FC42206C043002001B9 /* MapManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		04821FCC22084B62002001B9 /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				04CE88DD22180009009CDAD9 /* 0.gif */,
+				04CE88DF2218000A009CDAD9 /* 5.gif */,
+				04CE88E02218000A009CDAD9 /* 4.gif */,
+				04CE88E12218000A009CDAD9 /* 3.gif */,
+				04CE88DC22180009009CDAD9 /* 2.gif */,
+				04CE88DE2218000A009CDAD9 /* 1.gif */,
+			);
+			path = Gif;
+			sourceTree = "<group>";
+		};
+		04CE88E822180204009CDAD9 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				04CE88F12218059A009CDAD9 /* SplashNavigation.swift */,
+				04CE88EF22180401009CDAD9 /* SplashViewController0.swift */,
+				04CE88E922180286009CDAD9 /* SplashViewController1.swift */,
+				04CE88EB22180299009CDAD9 /* SplashViewController2.swift */,
+				04CE88ED221802BD009CDAD9 /* SplashViewController3.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		3F35808C6608E9C3C8927523 /* Pods */ = {
@@ -212,13 +195,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		94C49F8D18678850B2F9F930 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96029C5ADFCCFF251185FD97 /* Pods_MealDiary.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E6BF16D2217EDD2002B8CD7 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				9E6BF16E2217EDF1002B8CD7 /* Spoqa Han Sans Bold.ttf */,
+				9E6BF1712217EDF4002B8CD7 /* Spoqa Han Sans Light.ttf */,
+				9E6BF1702217EDF3002B8CD7 /* Spoqa Han Sans Regular.ttf */,
+				9E6BF16F2217EDF2002B8CD7 /* Spoqa Han Sans Thin.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		CE15BA8C21F5EB0B00FD69F7 = {
 			isa = PBXGroup;
 			children = (
 				CE15BA9721F5EB0B00FD69F7 /* MealDiary */,
 				CE15BA9621F5EB0B00FD69F7 /* Products */,
-				CE443DB221FA025400CB52B0 /* Frameworks */,
 				3F35808C6608E9C3C8927523 /* Pods */,
+				94C49F8D18678850B2F9F930 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,6 +235,7 @@
 		CE15BA9721F5EB0B00FD69F7 /* MealDiary */ = {
 			isa = PBXGroup;
 			children = (
+				04CE88E822180204009CDAD9 /* Splash */,
 				04821FB521FC267E002001B9 /* Manager */,
 				04821F9521FBF945002001B9 /* Extension */,
 				CE15BAB021F5EC0100FD69F7 /* Storyboard */,
@@ -241,7 +244,6 @@
 				CE15BAAD21F5EBBC00FD69F7 /* Model */,
 				CE15BAAA21F5EB1600FD69F7 /* Etc. */,
 				CE15BAA421F5EB0F00FD69F7 /* Info.plist */,
-				CE443DD321FA06AF00CB52B0 /* DaumMap-Bridging-Header.h */,
 			);
 			path = MealDiary;
 			sourceTree = "<group>";
@@ -249,9 +251,10 @@
 		CE15BAAA21F5EB1600FD69F7 /* Etc. */ = {
 			isa = PBXGroup;
 			children = (
-				04821F9A21FC03F4002001B9 /* Font */,
+				9E6BF16D2217EDD2002B8CD7 /* Font */,
 				CE15BA9821F5EB0B00FD69F7 /* AppDelegate.swift */,
 				CE15BA9F21F5EB0F00FD69F7 /* Assets.xcassets */,
+				04821FCC22084B62002001B9 /* Gif */,
 			);
 			path = Etc.;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				CE15BABE21F5FFC100FD69F7 /* Card.swift */,
+				048C5202221C3C340058C5D9 /* Global.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				CE15BAB921F5FB7C00FD69F7 /* Cell */,
-				CE15BAB421F5EFCA00FD69F7 /* MainHeaderView.swift */,
 				CE15BAC021F6070000FD69F7 /* FilterView.swift */,
 				CE15BAB121F5EE9400FD69F7 /* xib */,
 			);
@@ -280,12 +283,11 @@
 			children = (
 				CE15BA9A21F5EB0B00FD69F7 /* MainViewController.swift */,
 				04821FC22206A1FE002001B9 /* DetailViewController.swift */,
+				04821FCA220847B1002001B9 /* RateViewController.swift */,
 				04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */,
-<<<<<<< Updated upstream
-=======
-				9E6BF11022073C65002B8CD7 /* WritePlaceViewController.swift */,
-				9E6BF12622084F13002B8CD7 /* WriteMealDiaryViewController.swift */,
->>>>>>> Stashed changes
+				04CE88F522180896009CDAD9 /* SearchViewController.swift */,
+				048C520022192DD80058C5D9 /* WriteDiaryViewController.swift */,
+				CE3E1CA82234DEDE0055D021 /* BigImageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -294,13 +296,11 @@
 			isa = PBXGroup;
 			children = (
 				CE15BAA121F5EB0F00FD69F7 /* LaunchScreen.storyboard */,
+				04CE890522184898009CDAD9 /* Splash.storyboard */,
 				CE15BA9C21F5EB0B00FD69F7 /* Main.storyboard */,
-				04821FAD21FC04DD002001B9 /* SelectPhoto.storyboard */,
-<<<<<<< Updated upstream
-=======
-				9E6BF11222073C8C002B8CD7 /* WritePlace.storyboard */,
-				9E6BF12422084B19002B8CD7 /* WriteMealDiary.storyboard */,
->>>>>>> Stashed changes
+				04821FAD21FC04DD002001B9 /* Rate.storyboard */,
+				04CE88F322180854009CDAD9 /* Search.storyboard */,
+				9E6BF15B2217D375002B8CD7 /* Write.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -308,7 +308,6 @@
 		CE15BAB121F5EE9400FD69F7 /* xib */ = {
 			isa = PBXGroup;
 			children = (
-				CE15BAB221F5EEAF00FD69F7 /* MainHeaderView.xib */,
 				CE15BAC221F6073100FD69F7 /* FilterView.xib */,
 			);
 			path = xib;
@@ -317,66 +316,24 @@
 		CE15BAB921F5FB7C00FD69F7 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				CE15BABA21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift */,
 				04821FBE2205F0E1002001B9 /* HomeCardTableViewCell.swift */,
 				04821FBF2205F0E1002001B9 /* HomeCardTableViewCell.xib */,
-				CE15BABA21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift */,
 				CE15BABB21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib */,
 				CE443D0D21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift */,
 				CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */,
 				04821FAF21FC2087002001B9 /* SelectPhotoCollectionViewCell.swift */,
 				04821FB021FC2087002001B9 /* SelectPhotoCollectionViewCell.xib */,
-				9E6BF128220859CE002B8CD7 /* TagTableViewCell.swift */,
-				9E6BF129220859CE002B8CD7 /* TagTableViewCell.xib */,
+				04821FD5220857E2002001B9 /* RateCollectionViewCell.swift */,
+				04821FD6220857E2002001B9 /* RateCollectionViewCell.xib */,
+				04CE88F7221812FF009CDAD9 /* SearchTableViewCell.swift */,
+				04CE88F8221812FF009CDAD9 /* SearchTableViewCell.xib */,
+				04CE88FB22182421009CDAD9 /* TagHistoryTableViewCell.swift */,
+				04CE88FC22182421009CDAD9 /* TagHistoryTableViewCell.xib */,
+				9EF9B6A122202129002E6D8C /* SearchRestaurantTableViewCell.swift */,
+				9EF9B6A222202129002E6D8C /* SearchRestaurantTableViewCell.xib */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		CE443DB221FA025400CB52B0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CE443DC521FA031300CB52B0 /* DaumMap.embeddedframework */,
-				CE443DBF21FA02D400CB52B0 /* libc++.tbd */,
-				CE443DBD21FA02B400CB52B0 /* libsqlite3.tbd */,
-				CE443DBB21FA02A100CB52B0 /* libxml2.tbd */,
-				CE443DB921FA027100CB52B0 /* QuartzCore.framework */,
-				CE443DB721FA026A00CB52B0 /* CoreLocation.framework */,
-				CE443DB521FA026200CB52B0 /* SystemConfiguration.framework */,
-				CE443DB321FA025500CB52B0 /* OpenGLES.framework */,
-				BCFB69D9552636CD9D743323 /* Pods_MealDiary.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CE443DC521FA031300CB52B0 /* DaumMap.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				CE443DC621FA031300CB52B0 /* Resources */,
-				CE443DD021FA031300CB52B0 /* DaumMap.framework */,
-			);
-			path = DaumMap.embeddedframework;
-			sourceTree = "<group>";
-		};
-		CE443DC621FA031300CB52B0 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				CE443DC721FA031300CB52B0 /* Headers */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		CE443DC721FA031300CB52B0 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				CE443DC821FA031300CB52B0 /* MTMapPOIItem.h */,
-				CE443DC921FA031300CB52B0 /* MTMapCameraUpdate.h */,
-				CE443DCA21FA031300CB52B0 /* MTMapReverseGeoCoder.h */,
-				CE443DCB21FA031300CB52B0 /* MTMapPolyline.h */,
-				CE443DCC21FA031300CB52B0 /* MTMapLocationMarkerItem.h */,
-				CE443DCD21FA031300CB52B0 /* MTMapView.h */,
-				CE443DCE21FA031300CB52B0 /* MTMapGeometry.h */,
-				CE443DCF21FA031300CB52B0 /* MTMapCircle.h */,
-			);
-			path = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,32 +396,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E6BF12B220859CE002B8CD7 /* TagTableViewCell.xib in Resources */,
-				CE15BAB321F5EEAF00FD69F7 /* MainHeaderView.xib in Resources */,
-				04821FA821FC040B002001B9 /* NotoSansCJKkr-Light.otf in Resources */,
+				9EF9B6A422202129002E6D8C /* SearchRestaurantTableViewCell.xib in Resources */,
+				04CE88E72218000A009CDAD9 /* 3.gif in Resources */,
+				04CE88E62218000A009CDAD9 /* 4.gif in Resources */,
+				04CE88E22218000A009CDAD9 /* 2.gif in Resources */,
 				CE15BAA321F5EB0F00FD69F7 /* LaunchScreen.storyboard in Resources */,
+				9E6BF15C2217D375002B8CD7 /* Write.storyboard in Resources */,
 				CE15BAC321F6073100FD69F7 /* FilterView.xib in Resources */,
-				04821FA521FC040B002001B9 /* NotoSansCJKkr-Thin.otf in Resources */,
-				04821FAC21FC040B002001B9 /* NotoSansCJKkr-Bold.otf in Resources */,
 				CE15BAA021F5EB0F00FD69F7 /* Assets.xcassets in Resources */,
-				04821FA721FC040B002001B9 /* NotoSansCJKkr-DemiLight.otf in Resources */,
 				CE443D1021F76FBE00CB52B0 /* PhotoCollectionViewCell.xib in Resources */,
-				04821FAE21FC04DD002001B9 /* SelectPhoto.storyboard in Resources */,
+				04CE88F422180854009CDAD9 /* Search.storyboard in Resources */,
+				04CE88FE22182421009CDAD9 /* TagHistoryTableViewCell.xib in Resources */,
+				04CE88FA221812FF009CDAD9 /* SearchTableViewCell.xib in Resources */,
+				04CE88E42218000A009CDAD9 /* 1.gif in Resources */,
+				04821FAE21FC04DD002001B9 /* Rate.storyboard in Resources */,
 				04821FC12205F0E1002001B9 /* HomeCardTableViewCell.xib in Resources */,
-				04821FAA21FC040B002001B9 /* NotoSansMonoCJKkr-Bold.otf in Resources */,
+				04CE88E32218000A009CDAD9 /* 0.gif in Resources */,
 				CE15BABD21F5FC2D00FD69F7 /* DetailCardTableViewCell.xib in Resources */,
-				04821FAB21FC040B002001B9 /* NotoSansCJKkr-Regular.otf in Resources */,
+				04821FD8220857E2002001B9 /* RateCollectionViewCell.xib in Resources */,
 				04821FB221FC2087002001B9 /* SelectPhotoCollectionViewCell.xib in Resources */,
-<<<<<<< Updated upstream
-				04821FA921FC040B002001B9 /* NotoSansCJKkr-Black.otf in Resources */,
-				04821FA421FC040B002001B9 /* NotoSansMonoCJKkr-Regular.otf in Resources */,
-=======
-				9E6BF12522084B19002B8CD7 /* WriteMealDiary.storyboard in Resources */,
-				9E6BF11A22073F6C002B8CD7 /* Spoqa Han Sans Thin.ttf in Resources */,
-				9E6BF11322073C8C002B8CD7 /* WritePlace.storyboard in Resources */,
->>>>>>> Stashed changes
 				CE15BA9E21F5EB0B00FD69F7 /* Main.storyboard in Resources */,
-				04821FA621FC040B002001B9 /* NotoSansCJKkr-Medium.otf in Resources */,
+				04CE88E52218000A009CDAD9 /* 5.gif in Resources */,
+				04CE890622184898009CDAD9 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,15 +449,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MealDiary/Pods-MealDiary-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -519,24 +478,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				04821FBB2205E338002001B9 /* Label+Ext.swift in Sources */,
-				04821FC52206C043002001B9 /* MapManager.swift in Sources */,
-				9E6BF12722084F13002B8CD7 /* WriteMealDiaryViewController.swift in Sources */,
 				04821FC72206CD6A002001B9 /* View+Ext.swift in Sources */,
+				9EF9B6A322202129002E6D8C /* SearchRestaurantTableViewCell.swift in Sources */,
 				CE15BABC21F5FC2D00FD69F7 /* DetailCardTableViewCell.swift in Sources */,
-				9E6BF12A220859CE002B8CD7 /* TagTableViewCell.swift in Sources */,
 				CE15BA9B21F5EB0B00FD69F7 /* MainViewController.swift in Sources */,
+				04CE88EA22180286009CDAD9 /* SplashViewController1.swift in Sources */,
+				048C5205221C43870058C5D9 /* Date.swift in Sources */,
 				04821F9921FBFDEF002001B9 /* Color+Ext.swift in Sources */,
 				CE15BAC121F6070000FD69F7 /* FilterView.swift in Sources */,
+				04CE88F622180896009CDAD9 /* SearchViewController.swift in Sources */,
+				04CE88F9221812FF009CDAD9 /* SearchTableViewCell.swift in Sources */,
+				04CE88F022180402009CDAD9 /* SplashViewController0.swift in Sources */,
 				04821FC02205F0E1002001B9 /* HomeCardTableViewCell.swift in Sources */,
 				04821FB721FC268C002001B9 /* AssetManager.swift in Sources */,
 				04821FC32206A1FE002001B9 /* DetailViewController.swift in Sources */,
+				CE3E1CA92234DEDE0055D021 /* BigImageViewController.swift in Sources */,
+				04CE88EE221802BD009CDAD9 /* SplashViewController3.swift in Sources */,
 				04821FB921FC27F8002001B9 /* Image+Ext.swift in Sources */,
 				CE15BABF21F5FFC100FD69F7 /* Card.swift in Sources */,
 				CE443D0F21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift in Sources */,
-				CE15BAB521F5EFCA00FD69F7 /* MainHeaderView.swift in Sources */,
+				048C520122192DD80058C5D9 /* WriteDiaryViewController.swift in Sources */,
 				04821FB121FC2087002001B9 /* SelectPhotoCollectionViewCell.swift in Sources */,
+				04821FCB220847B1002001B9 /* RateViewController.swift in Sources */,
+				048C5203221C3C340058C5D9 /* Global.swift in Sources */,
 				04821FB421FC23A4002001B9 /* SelectPhotoViewController.swift in Sources */,
+				04CE88F22218059A009CDAD9 /* SplashNavigation.swift in Sources */,
 				04821F9721FBF953002001B9 /* String+Ext.swift in Sources */,
+				04821FD7220857E2002001B9 /* RateCollectionViewCell.swift in Sources */,
+				04CE88FD22182421009CDAD9 /* TagHistoryTableViewCell.swift in Sources */,
+				04CE88EC22180299009CDAD9 /* SplashViewController2.swift in Sources */,
 				CE15BA9921F5EB0B00FD69F7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,25 +655,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-<<<<<<< Updated upstream
 				DEVELOPMENT_TEAM = B6ZBD6VFGD;
-=======
-				DEVELOPMENT_TEAM = N598FBZXVH;
-				ENABLE_BITCODE = NO;
->>>>>>> Stashed changes
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
 				);
 				INFOPLIST_FILE = MealDiary/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bobbyWhite.MealDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "MealDiary/DaumMap-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -715,25 +680,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-<<<<<<< Updated upstream
 				DEVELOPMENT_TEAM = B6ZBD6VFGD;
-=======
-				DEVELOPMENT_TEAM = N598FBZXVH;
-				ENABLE_BITCODE = NO;
->>>>>>> Stashed changes
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
 				);
 				INFOPLIST_FILE = MealDiary/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bobbyWhite.MealDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "MealDiary/DaumMap-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

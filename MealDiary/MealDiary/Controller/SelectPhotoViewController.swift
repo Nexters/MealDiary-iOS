@@ -14,11 +14,13 @@ import RxCocoa
 class SelectPhotoViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    var photos: BehaviorRelay<[PHAsset]> = BehaviorRelay<[PHAsset]>(value: [])
+    var photos: BehaviorRelay<[Any]> = BehaviorRelay<[Any]>(value: [])
     var selectedIndexPaths: BehaviorRelay<[IndexPath]> = BehaviorRelay<[IndexPath]>(value: [])
     var dictionary: [Int: Int] = [:]
     let nextButton = UIButton(type: .system)
     let disposeBag = DisposeBag()
+    var checkedPhotos: [Photo] = []
+    var firstLoad: [Int: Bool] = [:]
     
     func setCollectionView() {
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
@@ -27,25 +29,85 @@ class SelectPhotoViewController: UIViewController {
         collectionView.register(UINib(nibName: SelectPhotoCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: SelectPhotoCollectionViewCell.identifier)
         
         photos.asObservable().bind(to: collectionView.rx.items(cellIdentifier: SelectPhotoCollectionViewCell.identifier, cellType: SelectPhotoCollectionViewCell.self)){
-            [weak self] (row, photoAsset, cell) in
+            [weak self] (item, photo, cell) in
             guard let `self` = self else { return }
 
-            cell.index = self.dictionary[row] ?? 0
-            cell.setUp(with: photoAsset)
+            cell.index = self.dictionary[item] ?? 0
+            
+            if let photoAsset = photo as? PHAsset {
+                cell.setUp(with: photoAsset)
+            } else if let photo = photo as? Photo {
+                if let data = photo.data {
+                    cell.setUp(with: data, assetIdentifier: photo.identifier)
+                    //
+                    if self.firstLoad[item] ?? true {
+                        let indexPath = IndexPath(item: item, section: 0)
+                        var paths = self.selectedIndexPaths.value
+                        paths.append(indexPath)
+                        self.selectedIndexPaths.accept(paths)
+
+                        let index = paths.firstIndex(of: indexPath) ?? 0
+                        self.dictionary[indexPath.item] = index + 1
+                        cell.check(index: index + 1)
+
+                        self.checkedPhotos.append(photo)
+                        
+                        self.nextButton.isEnabled = true
+                        self.firstLoad[item] = false
+                    } else {
+                        let indexPath = IndexPath(item: item, section: 0)
+                        let paths = self.selectedIndexPaths.value
+                        
+                        if paths.contains(indexPath) {
+                            let index = paths.firstIndex(of: indexPath) ?? 0
+                            self.nextButton.isEnabled = true
+                            cell.check(index: index + 1)
+                        } else {
+                            
+                            self.checkedPhotos = self.checkedPhotos.filter{ $0.identifier != photo.identifier }
+                            cell.uncheck()
+                        }
+                    }
+                }
+            }
             
             }.disposed(by: disposeBag)
         
         collectionView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
                 guard let `self` = self else { return }
+                guard let cell = self.collectionView.cellForItem(at: indexPath) as? SelectPhotoCollectionViewCell else { return }
                 
-                var selectedIndexPaths = self.selectedIndexPaths.value
-                selectedIndexPaths.append(indexPath)
-                self.selectedIndexPaths.accept(selectedIndexPaths)
-                
-                if selectedIndexPaths.count != 0 {
-                    self.nextButton.isEnabled = true
+                if cell.checked {
+                    var selectedIndexPaths = self.selectedIndexPaths.value
+                    
+                    guard let index = selectedIndexPaths.firstIndex(of: indexPath) else { return }
+                    selectedIndexPaths.remove(at: index)
+                    self.selectedIndexPaths.accept(selectedIndexPaths)
+                    
+                    if selectedIndexPaths.count == 0 {
+                        self.nextButton.isEnabled = false
+                    }
+                    
+                    cell.uncheck()
+                    
+                    let photo = cell.getPhoto()
+                    self.checkedPhotos = self.checkedPhotos.filter{ $0.identifier != photo.identifier }
+                } else {
+                    var selectedIndexPaths = self.selectedIndexPaths.value
+                    selectedIndexPaths.append(indexPath)
+                    self.selectedIndexPaths.accept(selectedIndexPaths)
+                    
+                    if selectedIndexPaths.count != 0 {
+                        self.nextButton.isEnabled = true
+                    }
+                    
+                    let photo = cell.getPhoto()
+                    self.checkedPhotos.append(photo)
                 }
+                
+                
+                
                 
             }).disposed(by: disposeBag)
         
@@ -53,62 +115,85 @@ class SelectPhotoViewController: UIViewController {
             .subscribe(onNext: { [weak self] indexPath in
                 guard let `self` = self else { return }
                 guard let cell = self.collectionView.cellForItem(at: indexPath) as? SelectPhotoCollectionViewCell else { return }
-                var selectedIndexPaths = self.selectedIndexPaths.value
                 
-                guard let index = selectedIndexPaths.firstIndex(of: indexPath) else { return }
-                selectedIndexPaths.remove(at: index)
-                self.selectedIndexPaths.accept(selectedIndexPaths)
-                
-                if selectedIndexPaths.count == 0 {
-                    self.nextButton.isEnabled = false
+                if cell.checked {
+                    var selectedIndexPaths = self.selectedIndexPaths.value
+                    
+                    guard let index = selectedIndexPaths.firstIndex(of: indexPath) else { return }
+                    selectedIndexPaths.remove(at: index)
+                    self.selectedIndexPaths.accept(selectedIndexPaths)
+                    
+                    if selectedIndexPaths.count == 0 {
+                        self.nextButton.isEnabled = false
+                    }
+                    
+                    cell.uncheck()
+                    
+                    let photo = cell.getPhoto()
+                    self.checkedPhotos = self.checkedPhotos.filter{ $0.identifier != photo.identifier }
+                } else {
+                    var selectedIndexPaths = self.selectedIndexPaths.value
+                    selectedIndexPaths.append(indexPath)
+                    self.selectedIndexPaths.accept(selectedIndexPaths)
+                    
+                    if selectedIndexPaths.count != 0 {
+                        self.nextButton.isEnabled = true
+                    }
+                    
+                    let photo = cell.getPhoto()
+                    self.checkedPhotos.append(photo)
                 }
                 
-                cell.unchecked()
+                
                 
             }).disposed(by: disposeBag)
 
-        selectedIndexPaths.asObservable().subscribe(onNext: { indexPaths in
+        selectedIndexPaths.asObservable().subscribe(onNext: { [weak self] indexPaths in
             indexPaths.forEach({ [weak self] (indexPath) in
                 guard let `self` = self else { return }
                 guard let index = indexPaths.firstIndex(of: indexPath) else { return }
                 guard let cell = self.collectionView.cellForItem(at: indexPath) as? SelectPhotoCollectionViewCell else { return }
                 
                 self.dictionary[indexPath.item] = index + 1
-                cell.checked(index: index + 1)
+                cell.check(index: index + 1)
             })
         }).disposed(by: disposeBag)
     }
     
     func getImages (){
-        PHPhotoLibrary.shared().register(self)
-        photos.accept(AssetManager.fetchImages(by: nil))
+        var array: [Any] = AssetManager.fetchImages(by: nil)
+        if let card = Global.shared.cardToModify {
+            array = (card.photos as [Any]) + array
+        }
+        photos.accept(array)
     }
     
     func setNavigationBar() {
+        let size = navigationController!.navigationBar.frame.height
         nextButton.setTitle("다음", for: .normal)
-        if let font = UIFont(name: "Helvetica", size: 18.0) {
-            nextButton.titleLabel?.font = font
-        }
+        self.nextButton.titleLabel?.font = UIFont(name: "SpoqaHanSans-Bold", size: 17)
         nextButton.addTarget(self, action: #selector(completeSelect), for: .touchUpInside)
+        nextButton.frame = CGRect(origin: .zero, size: CGSize(width: size, height: size))
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: nextButton)
         nextButton.isEnabled = false
     }
     
     @objc func completeSelect() {
+        Global.shared.photos = checkedPhotos
         
+        let storyBoard = UIStoryboard(name: "Write", bundle: nil)
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: "WriteDiaryViewController") as? WriteDiaryViewController else {
+            return
+        }
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
-    public var topDistance : CGFloat{
-        get{
-            if self.navigationController != nil && !self.navigationController!.navigationBar.isTranslucent{
-                return 0
-            }else{
-                let barHeight=self.navigationController?.navigationBar.frame.height ?? 0
-                let statusBarHeight = UIApplication.shared.isStatusBarHidden ? CGFloat(0) : UIApplication.shared.statusBarFrame.height
-                return barHeight + statusBarHeight
-            }
-        }
+    deinit {
+        print("VC deinit")
     }
+    
+    var first: Bool = true
 }
 
 extension SelectPhotoViewController {
@@ -116,13 +201,32 @@ extension SelectPhotoViewController {
         super.viewDidLoad()
         setCollectionView()
         setNavigationBar()
-        titleLabel.setOrangeUnderLine()
-        PHPhotoLibrary.requestAuthorization({
+        
+        PHPhotoLibrary.requestAuthorization({ [weak self]
             (newStatus) in
             if newStatus ==  PHAuthorizationStatus.authorized {
-                self.getImages()
+                self?.getImages()
             }
         })
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if first {
+            titleLabel.setOrangeUnderLine()
+            first = false
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        PHPhotoLibrary.shared().register(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        PHPhotoLibrary.shared().unregisterChangeObserver(self)
     }
 }
 

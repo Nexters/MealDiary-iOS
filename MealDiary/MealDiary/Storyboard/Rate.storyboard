@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Spoqa Han Sans Bold.ttf">
+            <string>SpoqaHanSans-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Rate View Controller-->
+        <scene sceneID="oYk-RC-h5g">
+            <objects>
+                <viewController storyboardIdentifier="RateViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="02i-Mn-i6J" customClass="RateViewController" customModule="MealDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2YP-u8-Ea9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoF-Bq-EGM">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.47058823529999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="JKK-gz-thd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="17"/>
+                                <state key="normal" title="평가하기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tabCompletRateButton:" destination="02i-Mn-i6J" eventType="touchUpInside" id="kYf-sB-KO9"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="UF9-WO-IIO">
+                                <rect key="frame" x="38" y="512" width="299" height="31"/>
+                                <color key="tintColor" red="0.99215686270000003" green="0.47058823529999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changeSliderValue:forEvent:" destination="02i-Mn-i6J" eventType="valueChanged" id="Sda-j7-FRn"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 식사는" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jho-oJ-5yu">
+                                <rect key="frame" x="20" y="85" width="335" height="25.5"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="m2Y-Bh-eHb">
+                                <rect key="frame" x="50" y="150.5" width="275" height="301.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pRW-iu-4BJ">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="m2Y-Bh-eHb" firstAttribute="leading" secondItem="c4P-Px-0IR" secondAttribute="leading" constant="50" id="4m0-Xo-jrX"/>
+                            <constraint firstItem="c4P-Px-0IR" firstAttribute="trailing" secondItem="UF9-WO-IIO" secondAttribute="trailing" constant="40" id="ATs-mi-zWW"/>
+                            <constraint firstItem="UF9-WO-IIO" firstAttribute="leading" secondItem="c4P-Px-0IR" secondAttribute="leading" constant="40" id="B9V-iW-ZoO"/>
+                            <constraint firstItem="UF9-WO-IIO" firstAttribute="top" secondItem="m2Y-Bh-eHb" secondAttribute="bottom" constant="60" id="BM8-xw-0RE"/>
+                            <constraint firstItem="c4P-Px-0IR" firstAttribute="trailing" secondItem="YoF-Bq-EGM" secondAttribute="trailing" id="GEH-ao-MfW"/>
+                            <constraint firstItem="m2Y-Bh-eHb" firstAttribute="top" secondItem="Jho-oJ-5yu" secondAttribute="bottom" constant="40" id="NA7-Cs-yeZ"/>
+                            <constraint firstItem="c4P-Px-0IR" firstAttribute="bottom" secondItem="YoF-Bq-EGM" secondAttribute="bottom" id="PD9-bX-bOW"/>
+                            <constraint firstItem="YoF-Bq-EGM" firstAttribute="top" secondItem="UF9-WO-IIO" secondAttribute="bottom" constant="65" id="Xal-hK-eF3"/>
+                            <constraint firstItem="YoF-Bq-EGM" firstAttribute="leading" secondItem="c4P-Px-0IR" secondAttribute="leading" id="Zf5-1W-P5b"/>
+                            <constraint firstItem="Jho-oJ-5yu" firstAttribute="top" secondItem="c4P-Px-0IR" secondAttribute="top" constant="65" id="odQ-2X-Hja"/>
+                            <constraint firstItem="c4P-Px-0IR" firstAttribute="trailing" secondItem="m2Y-Bh-eHb" secondAttribute="trailing" constant="50" id="peH-Kw-4pd"/>
+                            <constraint firstItem="Jho-oJ-5yu" firstAttribute="leading" secondItem="c4P-Px-0IR" secondAttribute="leading" constant="20" id="sre-Go-iwN"/>
+                            <constraint firstItem="c4P-Px-0IR" firstAttribute="trailing" secondItem="Jho-oJ-5yu" secondAttribute="trailing" constant="20" id="uFz-Eg-VL1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="c4P-Px-0IR"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="m2Y-Bh-eHb" id="NjW-Ty-EDs"/>
+                        <outlet property="rateSlider" destination="UF9-WO-IIO" id="Hrb-55-V8t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ze3-3V-dqw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-802" y="84"/>
+        </scene>
+        <!--Select Photo View Controller-->
+        <scene sceneID="7vf-lb-nO2">
+            <objects>
+                <viewController storyboardIdentifier="SelectPhotoViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rAu-eq-70Y" customClass="SelectPhotoViewController" customModule="MealDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u8Y-XV-gqp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 먹은 음식 사진을 골라줘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7de-co-aK4">
+                                <rect key="frame" x="17" y="40" width="341" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="7hh-2r-lUB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EKy-8o-2MP">
+                                <rect key="frame" x="0.0" y="99" width="375" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XHG-wc-q2r">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7de-co-aK4" firstAttribute="top" secondItem="nu5-7Q-PEh" secondAttribute="top" constant="20" id="9yN-I2-cuB"/>
+                            <constraint firstItem="nu5-7Q-PEh" firstAttribute="trailing" secondItem="7de-co-aK4" secondAttribute="trailing" constant="17" id="ADl-yC-z3V"/>
+                            <constraint firstItem="nu5-7Q-PEh" firstAttribute="trailing" secondItem="EKy-8o-2MP" secondAttribute="trailing" id="DFY-qr-oJX"/>
+                            <constraint firstItem="EKy-8o-2MP" firstAttribute="leading" secondItem="nu5-7Q-PEh" secondAttribute="leading" id="QUt-ya-pPX"/>
+                            <constraint firstItem="nu5-7Q-PEh" firstAttribute="bottom" secondItem="EKy-8o-2MP" secondAttribute="bottom" id="UqD-as-HjY"/>
+                            <constraint firstItem="EKy-8o-2MP" firstAttribute="top" secondItem="7de-co-aK4" secondAttribute="bottom" constant="23" id="VHY-x1-4eg"/>
+                            <constraint firstItem="7de-co-aK4" firstAttribute="leading" secondItem="nu5-7Q-PEh" secondAttribute="leading" constant="17" id="Y75-wn-ZMZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nu5-7Q-PEh"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="EKy-8o-2MP" id="Lbz-mb-aGA"/>
+                        <outlet property="titleLabel" destination="7de-co-aK4" id="0WD-US-vGA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r0L-fR-g7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="85"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</document>

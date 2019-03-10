@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Spoqa Han Sans Bold.ttf">
+            <string>SpoqaHanSans-Bold</string>
+        </array>
+        <array key="Spoqa Han Sans Regular.ttf">
+            <string>SpoqaHanSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RateCollectionViewCell" id="gTV-IL-0wX" customClass="RateCollectionViewCell" customModule="MealDiary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="287" height="280"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="280"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kGd-5p-y4G">
+                        <rect key="frame" x="76" y="0.0" width="135" height="135"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="kGd-5p-y4G" secondAttribute="height" multiplier="1:1" id="Yd6-NH-hop"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnh-2v-Sso">
+                        <rect key="frame" x="5" y="135" width="277" height="140"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="드디어 인생 맛집을 찾았다!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.55000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="9IT-ed-juo">
+                                <rect key="frame" x="0.0" y="75" width="277" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="JXF-yH-vqz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="15"/>
+                                <color key="textColor" red="0.99215686270000003" green="0.47058823529999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70 점" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="Ywy-oo-tJM">
+                                <rect key="frame" x="20" y="35" width="237" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2UD-2A-WyM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="30"/>
+                                <color key="textColor" red="0.99215686270000003" green="0.47058823529999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ywy-oo-tJM" secondAttribute="trailing" constant="20" id="77b-Ms-eg9"/>
+                            <constraint firstItem="Ywy-oo-tJM" firstAttribute="leading" secondItem="mnh-2v-Sso" secondAttribute="leading" constant="20" id="9gb-DG-hIt"/>
+                            <constraint firstAttribute="trailing" secondItem="9IT-ed-juo" secondAttribute="trailing" id="DyM-Xn-Xrv"/>
+                            <constraint firstItem="9IT-ed-juo" firstAttribute="leading" secondItem="mnh-2v-Sso" secondAttribute="leading" id="EKW-sv-ikA"/>
+                            <constraint firstItem="9IT-ed-juo" firstAttribute="top" secondItem="Ywy-oo-tJM" secondAttribute="bottom" id="IhR-jM-tW5"/>
+                            <constraint firstItem="Ywy-oo-tJM" firstAttribute="centerY" secondItem="mnh-2v-Sso" secondAttribute="centerY" constant="-15" id="qj8-oF-ltU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="mnh-2v-Sso" secondAttribute="trailing" constant="5" id="4GO-Sj-geH"/>
+                <constraint firstItem="mnh-2v-Sso" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="IdL-14-23t"/>
+                <constraint firstItem="kGd-5p-y4G" firstAttribute="height" secondItem="mnh-2v-Sso" secondAttribute="height" constant="-5" id="QqE-fB-sPl"/>
+                <constraint firstItem="kGd-5p-y4G" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pIh-Yz-qFC"/>
+                <constraint firstItem="mnh-2v-Sso" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="1:2" id="uWA-Gg-WmH"/>
+                <constraint firstItem="kGd-5p-y4G" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="wKB-Iu-Y4L"/>
+                <constraint firstAttribute="bottom" secondItem="mnh-2v-Sso" secondAttribute="bottom" constant="5" id="zMC-ge-orf"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="287" height="280"/>
+            <connections>
+                <outlet property="cardView" destination="mnh-2v-Sso" id="UGF-Jf-fdO"/>
+                <outlet property="imageView" destination="kGd-5p-y4G" id="Ydy-YY-PXN"/>
+                <outlet property="rateNumLabel" destination="Ywy-oo-tJM" id="4z4-zk-Egp"/>
+                <outlet property="rateTextLabel" destination="9IT-ed-juo" id="QSZ-Ge-27X"/>
+            </connections>
+            <point key="canvasLocation" x="207.19999999999999" y="158.32083958020991"/>
+        </collectionViewCell>
+    </objects>
+</document>
