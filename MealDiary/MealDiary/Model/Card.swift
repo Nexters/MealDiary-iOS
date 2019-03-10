@@ -9,9 +9,36 @@
 import UIKit
 import Photos
 
+struct Photo: Codable {
+    var identifier: String
+    var data: Data?
+    
+    enum CodingKeys: String, CodingKey {
+        case identifier
+        case data
+    }
+    
+    init(identifier: String, data: Data?) {
+        self.identifier = identifier
+        self.data = data
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        identifier = try values.decode(String.self, forKey: .identifier)
+        data = try values.decodeIfPresent(Data.self, forKey: .data)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(identifier, forKey: .identifier)
+        try container.encode(data, forKey: .data)
+    }
+}
+
 struct ContentCard: Codable {
     var id: String
-    var photoDatas: [Data?]
+    var photos: [Photo]
     var titleText: String
     var detailText: String
     var hashTagList: [String]
@@ -24,7 +51,7 @@ struct ContentCard: Codable {
     
     enum CodingKeys: String, CodingKey {
         case id
-        case photoDatas
+        case photos
         case titleText
         case detailText
         case hashTagList
@@ -36,9 +63,9 @@ struct ContentCard: Codable {
         case score
     }
     
-    init(id: String, photoDatas: [Data?], titleText: String, detailText: String, hashTagList: [String], restaurantName: String, restaurantLocation: String, restaurantLatitude: Double, restaurantLongitude: Double, date: Date, score: Int) {
+    init(id: String, photos: [Photo], titleText: String, detailText: String, hashTagList: [String], restaurantName: String, restaurantLocation: String, restaurantLatitude: Double, restaurantLongitude: Double, date: Date, score: Int) {
         self.id = id
-        self.photoDatas = photoDatas
+        self.photos = photos
         self.titleText = titleText
         self.detailText = detailText
         self.hashTagList = hashTagList
@@ -53,7 +80,7 @@ struct ContentCard: Codable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decode(String.self, forKey: .id)
-        photoDatas = try values.decode([Data?].self, forKey: .photoDatas)
+        photos = try values.decode([Photo].self, forKey: .photos)
         titleText = try values.decode(String.self, forKey: .titleText)
         detailText = try values.decode(String.self, forKey: .detailText)
         hashTagList = try values.decode([String].self, forKey: .hashTagList)
@@ -68,7 +95,7 @@ struct ContentCard: Codable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
-        try container.encode(photoDatas, forKey: .photoDatas)
+        try container.encode(photos, forKey: .photos)
         try container.encode(titleText, forKey: .titleText)
         try container.encode(detailText, forKey: .detailText)
         try container.encode(hashTagList, forKey: .hashTagList)

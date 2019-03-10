@@ -21,7 +21,7 @@ class Global {
     var mainFilterType: filterType = .date
     var searchFilterType: filterType = .date
     
-    var photoDatas: [Data?] = []
+    var photos: [Photo] = []
     var titleText: String = ""
     var detailText: String = ""
     var hashTagList: [String] = []
@@ -68,7 +68,7 @@ class Global {
     }
     
     func refresh() {
-        photoDatas = []
+        photos = []
         titleText = ""
         detailText = ""
         hashTagList = []
@@ -82,21 +82,31 @@ class Global {
     }
     
     func save() {
-        let card = ContentCard(id: UUID().uuidString, photoDatas: photoDatas, titleText: titleText, detailText: detailText, hashTagList: hashTagList, restaurantName: restaurantName, restaurantLocation: restaurantLocation, restaurantLatitude: restaurantLatitude, restaurantLongitude: restaurantLongitude, date: Date(), score: score)
+        let card = ContentCard(id: UUID().uuidString, photos: photos, titleText: titleText, detailText: detailText, hashTagList: hashTagList, restaurantName: restaurantName, restaurantLocation: restaurantLocation, restaurantLatitude: restaurantLatitude, restaurantLongitude: restaurantLongitude, date: Date(), score: score)
         
-        modify(card: card)
+        guard let data = try? encoder.encode(card) else { return }
+        var cardArray = cards.value
+        cardArray.append(card)
+        cardArray = filter(cards: cardArray, by: mainFilterType)
+        cards.accept(cardArray)
+        
+        var cardDict = AssetManager.getDictData(for: DictKeyword.card.rawValue)
+        cardDict[card.id] = data
+        AssetManager.save(data: cardDict, for: DictKeyword.card.rawValue)
     }
     
     func modify() {
         let id = cardToModify?.id ?? UUID().uuidString
-        let card = ContentCard(id: id, photoDatas: photoDatas, titleText: titleText, detailText: detailText, hashTagList: hashTagList, restaurantName: restaurantName, restaurantLocation: restaurantLocation, restaurantLatitude: restaurantLatitude, restaurantLongitude: restaurantLongitude, date: Date(), score: score)
+        let card = ContentCard(id: id, photos: photos, titleText: titleText, detailText: detailText, hashTagList: hashTagList, restaurantName: restaurantName, restaurantLocation: restaurantLocation, restaurantLatitude: restaurantLatitude, restaurantLongitude: restaurantLongitude, date: Date(), score: score)
         
-        modify(card: card)
-    }
-    
-    func modify(card: ContentCard) {
         guard let data = try? encoder.encode(card) else { return }
         var cardArray = cards.value
+        for i in 0..<cardArray.count {
+            if cardArray[i].id == id {
+                cardArray.remove(at: i)
+                break
+            }
+        }
         cardArray.append(card)
         cardArray = filter(cards: cardArray, by: mainFilterType)
         cards.accept(cardArray)

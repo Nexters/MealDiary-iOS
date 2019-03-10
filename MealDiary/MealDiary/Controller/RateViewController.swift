@@ -30,7 +30,7 @@ class RateViewController: UIViewController {
     }
     @IBAction func tabCompletRateButton(_ sender: Any) {
         Global.shared.score = Int(rateSlider.value * 10)
-        if let card = Global.shared.cardToModify {
+        if Global.shared.cardToModify != nil {
             Global.shared.modify()
         } else {
             Global.shared.save()

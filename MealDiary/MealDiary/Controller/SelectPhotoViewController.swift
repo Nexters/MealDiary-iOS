@@ -18,35 +18,7 @@ class SelectPhotoViewController: UIViewController {
     var selectedIndexPaths: BehaviorRelay<[IndexPath]> = BehaviorRelay<[IndexPath]>(value: [])
     var dictionary: [Int: Int] = [:]
     let nextButton = UIButton(type: .system)
-    var disposeBag = DisposeBag()
-    
-//    func checkUncheckCell(for indexPath: IndexPath) {
-//        if let cell = collectionView.cellForItem(at: indexPath) as? SelectPhotoCollectionViewCell {
-//            if cell.checked {
-//
-//                var selectedIndexPathsValue = self.selectedIndexPaths.value
-//                selectedIndexPathsValue.append(indexPath)
-//                selectedIndexPaths.accept(selectedIndexPathsValue)
-//
-//                if selectedIndexPathsValue.count != 0 {
-//                    nextButton.isEnabled = true
-//                }
-//
-//            } else {
-//                var selectedIndexPathsValue = self.selectedIndexPaths.value
-//
-//                guard let index = selectedIndexPathsValue.firstIndex(of: indexPath) else { return }
-//                selectedIndexPathsValue.remove(at: index)
-//                self.selectedIndexPaths.accept(selectedIndexPathsValue)
-//
-//                if selectedIndexPathsValue.count == 0 {
-//                    self.nextButton.isEnabled = false
-//                }
-//
-//                cell.uncheck()
-//            }
-//        }
-//    }
+    let disposeBag = DisposeBag()
     
     func setCollectionView() {
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
@@ -62,16 +34,18 @@ class SelectPhotoViewController: UIViewController {
             
             if let photoAsset = photo as? PHAsset {
                 cell.setUp(with: photoAsset)
-            } else if let photoData = photo as? Data {
-                cell.setUp(with: photoData)
-                let indexPath = IndexPath(item: item, section: 0)
-                var paths = self.selectedIndexPaths.value
-                paths.append(indexPath)
-                self.selectedIndexPaths.accept(paths)
-                
-                let index = paths.firstIndex(of: indexPath) ?? 0
-                self.dictionary[indexPath.item] = index + 1
-                cell.check(index: index + 1)
+            } else if let photo = photo as? Photo {
+                if let data = photo.data {
+                    cell.setUp(with: data, assetIdentifier: photo.identifier)
+                    let indexPath = IndexPath(item: item, section: 0)
+                    var paths = self.selectedIndexPaths.value
+                    paths.append(indexPath)
+                    self.selectedIndexPaths.accept(paths)
+                    
+                    let index = paths.firstIndex(of: indexPath) ?? 0
+                    self.dictionary[indexPath.item] = index + 1
+                    cell.check(index: index + 1)
+                }
             }
             
             }.disposed(by: disposeBag)
@@ -151,15 +125,9 @@ class SelectPhotoViewController: UIViewController {
     func getImages (){
         var array: [Any] = AssetManager.fetchImages(by: nil)
         if let card = Global.shared.cardToModify {
-            array = (card.photoDatas as [Any]) + array
+            array = (card.photos as [Any]) + array
         }
         photos.accept(array)
-        
-//        DispatchQueue.main.async { [weak self] in
-//            self?.collectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .top)
-//            self?.collectionView.selectItem(at: IndexPath(item: 1, section: 0), animated: false, scrollPosition: .top)
-//        }
-        
     }
     
     func setNavigationBar() {
@@ -173,19 +141,22 @@ class SelectPhotoViewController: UIViewController {
     }
     
     @objc func completeSelect() {
-        var datas: [Data] = []
+        var photos: [Photo] = []
         for index in selectedIndexPaths.value {
             if let cell = collectionView.cellForItem(at: index) as? SelectPhotoCollectionViewCell {
                 if let data = cell.data {
-                    datas.append(data)
-                } else if let data = cell.imageView.image?.pngData() {
-                    datas.append(data)
-                    
+                    let identifier = cell.photo.localIdentifier
+                    let photo = Photo(identifier: identifier, data: data)
+                    photos.append(photo)
+                } else if let data = cell.image?.pngData() {
+                    let identifier = cell.photo.localIdentifier
+                    let photo = Photo(identifier: identifier, data: data)
+                    photos.append(photo)
                 }
             }
         }
         
-        Global.shared.photoDatas = datas
+        Global.shared.photos = photos
         
         let storyBoard = UIStoryboard(name: "Write", bundle: nil)
         guard let vc = storyBoard.instantiateViewController(withIdentifier: "WriteDiaryViewController") as? WriteDiaryViewController else {
@@ -195,21 +166,8 @@ class SelectPhotoViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-//    public var topDistance : CGFloat{
-//        get{
-//            if navigationController != nil && !navigationController!.navigationBar.isTranslucent{
-//                return 0
-//            }else{
-//                let barHeight = navigationController?.navigationBar.frame.height ?? 0
-//                let statusBarHeight = UIApplication.shared.isStatusBarHidden ? CGFloat(0) : UIApplication.shared.statusBarFrame.height
-//                return barHeight + statusBarHeight
-//            }
-//        }
-//    }
-    
     deinit {
         print("VC deinit")
-        disposeBag = DisposeBag()
     }
 }
 

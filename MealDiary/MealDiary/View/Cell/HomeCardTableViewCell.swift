@@ -20,9 +20,18 @@ class HomeCardTableViewCell: UITableViewCell {
     static let identifier = "HomeCardTableViewCell"
     
     func setUp(with card: ContentCard) {
-        if let data = card.photoDatas.first as? Data {
-            backgroundImage.image = UIImage(data: data)
+        if let photo = card.photos.first {
+            let asset = AssetManager.fetchImages(by: [photo.identifier]).first
+            if let `asset` = asset {
+                
+                backgroundImage.fetchImage(asset: asset, contentMode: .aspectFill, targetSize: backgroundImage.frame.size) { _ in
+                    
+                }
+            } else if let data = photo.data {
+                backgroundImage.image = UIImage(data: data)
+            }
         }
+        
         backgroundImage.layer.cornerRadius = 10
         dimmedView.layer.cornerRadius = 10
         pointLabel.text = card.score.description

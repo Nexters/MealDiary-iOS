@@ -42,7 +42,7 @@ class DetailCardTableViewCell: UITableViewCell {
         collectionView.register(UINib(nibName: PhotoCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
         cardNumberLabel.clipsToBounds = true
         cardNumberLabel.layer.cornerRadius = 10
-        cardNumberLabel.text = "1/" + card.photoDatas.count.description
+        cardNumberLabel.text = "1/" + card.photos.count.description
         pointLabel.text = card.score.description
         restaurantNameLabel.text = card.titleText
         detailLabel.text = card.detailText
@@ -63,18 +63,18 @@ class DetailCardTableViewCell: UITableViewCell {
         let pageWidth = scrollView.frame.size.width
         let page = Int(floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1) + 1
         currentPage = page
-        cardNumberLabel.text = currentPage.description + "/" + (card?.photoDatas.count.description ?? "1")
+        cardNumberLabel.text = currentPage.description + "/" + (card?.photos.count.description ?? "1")
     }
 }
 
 extension DetailCardTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return card?.photoDatas.count ?? 0
+        return card?.photos.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
-        if let data = card?.photoDatas[indexPath.item] {
+        if let data = card?.photos[indexPath.item].data {
             cell.imageView.image = UIImage(data: data)
         }
         return cell

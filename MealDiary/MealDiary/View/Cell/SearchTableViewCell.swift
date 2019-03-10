@@ -31,7 +31,7 @@ class SearchTableViewCell: UITableViewCell {
     }
     
     func setUp(with card: ContentCard) {
-        if let data = card.photoDatas.first as? Data {
+        if let data = card.photos.first as? Data {
             foodImage.image = UIImage(data: data)
         }
         titleLabel.text = card.titleText
