@@ -82,9 +82,36 @@ extension DetailViewController {
         setTableView()
     }
     
+    @objc private func popBigImage(_ notification: Notification){
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "BigImageViewController") as! BigImageViewController
+        
+        if let photo = notification.userInfo?["photo"] as? Photo {
+            self.present(vc, animated: false, completion: nil)
+            let asset = AssetManager.fetchImages(by: [photo.identifier]).first
+            if let `asset` = asset {
+                
+                vc.imageView.fetchImage(asset: asset, contentMode: .aspectFit, targetSize: vc.imageView.frame.size) { _ in
+                    
+                }
+            } else if let data = photo.data {
+                vc.imageView.image = UIImage(data: data)
+            }
+            
+            
+        }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(popBigImage(_:)), name: Notification.Name(rawValue: "popBigImage"), object: nil)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: "popBigImage"), object: nil)
     }
 }
 

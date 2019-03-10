@@ -58,6 +58,7 @@
 		CE15BABF21F5FFC100FD69F7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BABE21F5FFC100FD69F7 /* Card.swift */; };
 		CE15BAC121F6070000FD69F7 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BAC021F6070000FD69F7 /* FilterView.swift */; };
 		CE15BAC321F6073100FD69F7 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE15BAC221F6073100FD69F7 /* FilterView.xib */; };
+		CE3E1CA92234DEDE0055D021 /* BigImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E1CA82234DEDE0055D021 /* BigImageViewController.swift */; };
 		CE443D0F21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE443D0D21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift */; };
 		CE443D1021F76FBE00CB52B0 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -122,6 +123,7 @@
 		CE15BABE21F5FFC100FD69F7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CE15BAC021F6070000FD69F7 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		CE15BAC221F6073100FD69F7 /* FilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
+		CE3E1CA82234DEDE0055D021 /* BigImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigImageViewController.swift; sourceTree = "<group>"; };
 		CE443D0D21F76FBE00CB52B0 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE443D0E21F76FBE00CB52B0 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -285,6 +287,7 @@
 				04821FB321FC23A4002001B9 /* SelectPhotoViewController.swift */,
 				04CE88F522180896009CDAD9 /* SearchViewController.swift */,
 				048C520022192DD80058C5D9 /* WriteDiaryViewController.swift */,
+				CE3E1CA82234DEDE0055D021 /* BigImageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				04821FC02205F0E1002001B9 /* HomeCardTableViewCell.swift in Sources */,
 				04821FB721FC268C002001B9 /* AssetManager.swift in Sources */,
 				04821FC32206A1FE002001B9 /* DetailViewController.swift in Sources */,
+				CE3E1CA92234DEDE0055D021 /* BigImageViewController.swift in Sources */,
 				04CE88EE221802BD009CDAD9 /* SplashViewController3.swift in Sources */,
 				04821FB921FC27F8002001B9 /* Image+Ext.swift in Sources */,
 				CE15BABF21F5FFC100FD69F7 /* Card.swift in Sources */,

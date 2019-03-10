@@ -74,10 +74,26 @@ extension DetailCardTableViewCell: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
-        if let data = card?.photos[indexPath.item].data {
-            cell.imageView.image = UIImage(data: data)
+        
+        if let photo = card?.photos[indexPath.item] {
+            let asset = AssetManager.fetchImages(by: [photo.identifier]).first
+            if let `asset` = asset {
+                
+                cell.imageView.fetchImage(asset: asset, contentMode: .aspectFill, targetSize: cell.imageView.frame.size) { _ in
+                    
+                }
+            } else if let data = photo.data {
+                cell.imageView.image = UIImage(data: data)
+            }
         }
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let photo = card?.photos[indexPath.item] {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "popBigImage"), object: nil, userInfo: ["photo" : photo])
+        }
     }
 }
 

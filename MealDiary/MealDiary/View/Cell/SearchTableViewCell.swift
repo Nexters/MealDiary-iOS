@@ -31,8 +31,16 @@ class SearchTableViewCell: UITableViewCell {
     }
     
     func setUp(with card: ContentCard) {
-        if let data = card.photos.first as? Data {
-            foodImage.image = UIImage(data: data)
+        if let photo = card.photos.first {
+            let asset = AssetManager.fetchImages(by: [photo.identifier]).first
+            if let `asset` = asset {
+                
+                foodImage.fetchImage(asset: asset, contentMode: .aspectFill, targetSize: foodImage.frame.size) { _ in
+                    
+                }
+            } else if let data = photo.data {
+                foodImage.image = UIImage(data: data)
+            }
         }
         titleLabel.text = card.titleText
         distanceLabel.text = "km"
