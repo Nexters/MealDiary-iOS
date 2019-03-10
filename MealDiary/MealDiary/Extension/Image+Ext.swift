@@ -10,24 +10,25 @@ import UIKit
 import Photos
 
 extension UIImageView {
-    func fetchImage(asset: PHAsset, contentMode: PHImageContentMode, targetSize: CGSize) {
+    func fetchImage(asset: PHAsset, contentMode: PHImageContentMode, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
         let options = PHImageRequestOptions()
         options.version = .current
         options.deliveryMode = .opportunistic
         options.isSynchronous = false
         
         let imageManager = PHCachingImageManager()
-        imageManager.requestImage(for: asset, targetSize: targetSize, contentMode: contentMode, options: options, resultHandler: { (image : UIImage?, _) in
+        imageManager.requestImage(for: asset, targetSize: targetSize, contentMode: contentMode, options: options, resultHandler: { [weak self] (image : UIImage?, _) in
+            completion(image)
             guard let image = image else { return }
             
             switch contentMode {
             case .aspectFill:
-                self.contentMode = .scaleAspectFill
+                self?.contentMode = .scaleAspectFill
             case .aspectFit:
-                self.contentMode = .scaleAspectFit
+                self?.contentMode = .scaleAspectFit
             }
             
-            self.image = image
+            self?.image = image
         })
     }
     

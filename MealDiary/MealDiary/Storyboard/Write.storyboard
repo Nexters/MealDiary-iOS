@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Spoqa Han Sans Bold.ttf">
+            <string>SpoqaHanSans-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Write Diary View Controller-->
+        <scene sceneID="cLg-OL-NPm">
+            <objects>
+                <viewController storyboardIdentifier="WriteDiaryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Iar-VX-By5" customClass="WriteDiaryViewController" customModule="MealDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sUM-20-L02">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="적는 게 남는 거야" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSu-oB-qcl">
+                                <rect key="frame" x="20" y="40" width="335" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="FLF-HE-WRy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0x-YQ-nH4">
+                                <rect key="frame" x="0.0" y="111" width="375" height="556"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9OM-GW-djV" firstAttribute="trailing" secondItem="B0x-YQ-nH4" secondAttribute="trailing" id="3hs-xg-5qm"/>
+                            <constraint firstItem="hSu-oB-qcl" firstAttribute="leading" secondItem="9OM-GW-djV" secondAttribute="leading" constant="20" id="FW7-Kc-NYh"/>
+                            <constraint firstItem="B0x-YQ-nH4" firstAttribute="top" secondItem="hSu-oB-qcl" secondAttribute="bottom" constant="35" id="GJp-Q3-0N3"/>
+                            <constraint firstItem="hSu-oB-qcl" firstAttribute="top" secondItem="9OM-GW-djV" secondAttribute="top" constant="20" id="Wdl-HY-QjE"/>
+                            <constraint firstItem="9OM-GW-djV" firstAttribute="bottom" secondItem="B0x-YQ-nH4" secondAttribute="bottom" id="ce9-aU-PTI"/>
+                            <constraint firstItem="9OM-GW-djV" firstAttribute="trailing" secondItem="hSu-oB-qcl" secondAttribute="trailing" constant="20" id="cjM-eZ-69x"/>
+                            <constraint firstItem="B0x-YQ-nH4" firstAttribute="leading" secondItem="9OM-GW-djV" secondAttribute="leading" id="fRV-zX-Ktr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9OM-GW-djV"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="B0x-YQ-nH4" id="nuB-yM-hlU"/>
+                        <outlet property="titleLabel" destination="hSu-oB-qcl" id="myi-ce-G1f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c7g-fb-nNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-714" y="99"/>
+        </scene>
+    </scenes>
+</document>

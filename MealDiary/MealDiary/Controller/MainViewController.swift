@@ -10,48 +10,113 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+public enum filterType: String {
+    case date = "최신순"
+//    case distance = "거리순"
+    case score = "평점순"
+}
+
 class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var headerView: MainHeaderView = MainHeaderView()
-    var filterView: FilterView = FilterView()
-    var cards: BehaviorRelay<[Card]> = BehaviorRelay<[Card]>(value: sample.cards)
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var writeButton: UIButton!
+    
+    lazy var filterView: FilterView = FilterView()
+    lazy var emptyImageView: UIImageView = UIImageView()
+    
     var selectedIndex: Set<Int> = []
     var tableFrame: CGRect?
     var filterFrame: CGRect?
     
     var scrollViewStartOffsetY: CGFloat = 0
     var beforeOffsetY: CGFloat = 0
-    var height: CGFloat = 0
     let disposeBag = DisposeBag()
+    
+    @IBAction func tabWriteButton(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Rate", bundle: nil)
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: "SelectPhotoViewController") as? SelectPhotoViewController else {
+            return
+        }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     func setFilterView() {
         guard let filterView = FilterView.instanceFromNib() else { return }
         self.filterView = filterView
       
-        let origin = CGPoint(x: 0, y: height + headerView.frame.height)
+        let origin = CGPoint(x: 0, y: headerView.frame.origin.y + headerView.frame.height)
         let filterFrame = CGRect(origin: origin, size: CGSize(width: self.view.frame.width, height: 55))
         filterView.setUp(frame: filterFrame)
         
         self.filterFrame = filterFrame
         self.view.addSubview(filterView)
+        
+        filterView.filterButton.rx.tap.bind{ [weak self] in
+            guard let `self` = self else { return }
+            self.tabFilterButton()
+        }.disposed(by: disposeBag)
+    }
+    
+    func tabFilterButton() {
+        let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let cancelActionButton = UIAlertAction(title: "취소", style: .cancel) { action -> Void in
+            print("Cancel")
+        }
+        actionSheetController.addAction(cancelActionButton)
+        
+        let dateActionButton = UIAlertAction(title: "최신순", style: .default) { [weak self] action -> Void in
+            guard let `self` = self else { return }
+            self.filterView.filterLabel.text = filterType.date.rawValue
+            Global.shared.mainFilterType = .date
+            Global.shared.cards.accept(Global.shared.filter(cards: Global.shared.cards.value, by: .date))
+            self.scrollToTop()
+        }
+        actionSheetController.addAction(dateActionButton)
+        
+//        let distanceActionButton = UIAlertAction(title: "거리순", style: .default) { [weak self] action -> Void in
+//            guard let `self` = self else { return }
+//            self.filterView.filterLabel.text = filterType.distance.rawValue
+//            Global.shared.mainFilterType = .distance
+//            Global.shared.cards.accept(Global.shared.filter(cards: Global.shared.cards.value, by: .distance))
+//            self.scrollToTop()
+//        }
+//        actionSheetController.addAction(distanceActionButton)
+        
+        let scoreActionButton = UIAlertAction(title: "평점순",style: .default) { [weak self] action -> Void in
+            guard let `self` = self else { return }
+            self.filterView.filterLabel.text = filterType.score.rawValue
+            Global.shared.mainFilterType = .score
+            Global.shared.cards.accept(Global.shared.filter(cards: Global.shared.cards.value, by: .score))
+            self.scrollToTop()
+        }
+        actionSheetController.addAction(scoreActionButton)
+        
+        self.present(actionSheetController, animated: true, completion: nil)
+    }
+    
+    func scrollToTop() {
+        DispatchQueue.main.async { [weak self] in
+            guard let `self` = self else { return }
+            let indexPath = IndexPath(row: 0, section: 0)
+            self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        }
     }
     
     func setInitialView() {
-        guard let headerView = MainHeaderView.instanceFromNib() else { return }
-        guard let `navigationController` = navigationController else { return }
+        writeButton.clipsToBounds = true
+        writeButton.layer.cornerRadius = writeButton.frame.height / 2
         
-        height = UIApplication.shared.statusBarFrame.height + navigationController.navigationBar.frame.height
-        self.headerView = headerView
+        emptyImageView.contentMode = .scaleAspectFit
+        emptyImageView.image = UIImage(named: "empty.png")
+        emptyImageView.frame = CGRect(x: 70, y: headerView.frame.origin.y + headerView.frame.height + 30, width: view.frame.width - 140, height: view.frame.height / 2)
         
-        headerView.writeButton.addTarget(self, action: #selector(tabWriteButton), for: .touchUpInside)
-        let origin = CGPoint(x: 0, y: height)
-        let headerFrame = CGRect(origin: origin, size: CGSize(width: self.view.frame.width, height: 94))
-        headerView.setUp(frame: headerFrame)
-        
-        self.view.addSubview(headerView)
+        self.view.addSubview(emptyImageView)
         self.view.sendSubviewToBack(headerView)
         self.view.bringSubviewToFront(tableView)
+        self.view.bringSubviewToFront(emptyImageView)
     }
     
     func setTableView() {
@@ -62,14 +127,32 @@ class MainViewController: UIViewController {
         tableView.frame = tableFrame ?? CGRect(origin: .zero, size: .zero)
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         
-        cards.asObservable().bind(to: tableView.rx.items(cellIdentifier: HomeCardTableViewCell.identifier, cellType: HomeCardTableViewCell.self)){
+        Global.shared.cards.subscribe(onNext: { [weak self] (cards) in
+            if cards.isEmpty {
+                self?.headerView.alpha = 1
+            } else {
+                self?.scrollToTop()
+            }
+            
+            if cards.isEmpty {
+                self?.emptyImageView.isHidden = false
+                self?.tableView.isHidden = true
+                self?.filterView.isHidden = true
+            } else {
+                self?.emptyImageView.isHidden = true
+                self?.tableView.isHidden = false
+                self?.filterView.isHidden = false
+            }
+        }).disposed(by: disposeBag)
+        
+        Global.shared.cards.asObservable().bind(to: tableView.rx.items(cellIdentifier: HomeCardTableViewCell.identifier, cellType: HomeCardTableViewCell.self)){
             (row, card, cell) in
             cell.setUp(with: card)
         }.disposed(by: disposeBag)
         
         tableView.rx.itemSelected.subscribe( onNext: { [weak self] (indexPath) in
             guard let `self` = self else { return }
-            let card = self.cards.value[indexPath.item]
+            let card = Global.shared.cards.value[indexPath.item]
             
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
@@ -80,28 +163,29 @@ class MainViewController: UIViewController {
     }
     
     func setNavigationBar() {
-        let size = navigationController!.navigationBar.frame.height
+        let size = navigationController?.navigationBar.frame.height ?? 32
     
-        let searchButton = UIButton(type: .system)
-        searchButton.setImage(UIImage(named: "iconIcSearchDefault")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        let searchButton = UIButton(type: .custom)
+        searchButton.setImage(UIImage(named: "iconIcSearchDefault"), for: .normal)
         searchButton.imageView?.contentMode = .scaleAspectFit
         searchButton.addTarget(self, action: #selector(goSearchView), for: .touchUpInside)
-        
-        let widthConstraint = searchButton.widthAnchor.constraint(equalToConstant: size)
-        let heightConstraint = searchButton.heightAnchor.constraint(equalToConstant: size)
-        widthConstraint.isActive = true
-        heightConstraint.isActive = true
+        searchButton.frame = CGRect(origin: .zero, size: CGSize(width: size, height: size))
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchButton)
     }
     
     @objc func goSearchView() {
-        
+        let storyBoard = UIStoryboard(name: "Search", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc func tabWriteButton(sender: UIButton) {
-        let storyBoard = UIStoryboard(name: "SelectPhoto", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "SelectPhotoViewController") as! SelectPhotoViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+    func popUpSplash() {
+        let first = AssetManager.getBoolData(for: DictKeyword.firstVist.rawValue)
+        if first {
+            let storyBoard = UIStoryboard(name: "Splash", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "SplashNavigation") as! SplashNavigation
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 }
 
@@ -112,11 +196,23 @@ extension MainViewController {
         setFilterView()
         setTableView()
         setNavigationBar()
+        popUpSplash()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Global.shared.refresh()
     }
 }
 
 extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard Global.shared.cards.value.count > 1 else { return }
+        
         let offsetY: CGFloat = {
             let firstOffset = scrollViewStartOffsetY < 0 ? scrollViewStartOffsetY * -1 : scrollViewStartOffsetY
             return scrollView.contentOffset.y + firstOffset
@@ -125,8 +221,7 @@ extension MainViewController: UIScrollViewDelegate {
         guard let tableFrame = self.tableFrame else { return }
         guard let filterFrame = self.filterFrame else { return }
         
-        let difference = offsetY - beforeOffsetY
-        let height = UIApplication.shared.statusBarFrame.height + navigationController!.navigationBar.frame.height
+        let difference = (offsetY - beforeOffsetY) * 1.1
         
         if offsetY <= 0 {
             headerView.alpha = 1
@@ -140,13 +235,13 @@ extension MainViewController: UIScrollViewDelegate {
                     headerView.alpha -= (difference / 80)
                 }
                 
-                if tableView.frame.origin.y > height {
+                if tableView.frame.origin.y > headerView.frame.origin.y {
                     filterView.frame.origin.y -= difference
                     tableView.frame = CGRect(x: 0, y: tableView.frame.origin.y - difference, width: tableFrame.width, height: tableView.frame.size.height + difference)
                 } else {
                     headerView.alpha = 0
-                    filterView.frame = CGRect(x: 0, y: height - filterFrame.height, width: filterFrame.width, height: filterFrame.height)
-                    tableView.frame = CGRect(x: 0, y: height, width: tableFrame.width, height: self.view.frame.height - height)
+                    filterView.frame = CGRect(x: 0, y: headerView.frame.origin.y - filterFrame.height, width: filterFrame.width, height: filterFrame.height)
+                    tableView.frame = CGRect(x: 0, y: headerView.frame.origin.y, width: tableFrame.width, height: self.view.frame.height - headerView.frame.origin.y)
                 }
                 
             } else {

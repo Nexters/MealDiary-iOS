@@ -6,6 +6,9 @@ target 'MealDiary' do
   use_frameworks!
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Alamofire'
+  pod 'SwiftyGif'
+  pod 'SwiftyJSON'
   # Pods for MealDiary
 
 end
