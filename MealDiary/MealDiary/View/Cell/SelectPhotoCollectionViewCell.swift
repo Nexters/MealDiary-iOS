@@ -16,14 +16,21 @@ class SelectPhotoCollectionViewCell: UICollectionViewCell {
     var photo = PHAsset()
     var index: Int = 0
     var checked: Bool = false
-    var data: Data?
     
     static let identifier = "SelectPhotoCollectionViewCell"
     
+    func getPhoto() -> Photo {
+        let identifier = photo.localIdentifier
+        let data = imageView.image?.pngData()
+        let value = Photo(identifier: identifier, data: data)
+        
+        return value
+    }
+    
     func setUp(with photo: PHAsset) {
         self.photo = photo
-        imageView.fetchImage(asset: photo, contentMode: .aspectFill, targetSize: imageView.frame.size) { [weak self] (image) in
-            self?.data = image?.pngData()
+        imageView.fetchImage(asset: photo, contentMode: .aspectFill, targetSize: imageView.frame.size) { _ in
+//            self?.data = image?.pngData()
         }
         checkedNumberLabel.clipsToBounds = true
         checkedNumberLabel.layer.cornerRadius = checkedNumberLabel.frame.size.width / 2
@@ -37,7 +44,6 @@ class SelectPhotoCollectionViewCell: UICollectionViewCell {
     
     func setUp(with photo: Data, assetIdentifier: String) {
         self.photo = AssetManager.fetchImages(by: [assetIdentifier]).first ?? PHAsset()
-        data = photo
         imageView.image = UIImage(data: photo)
         checkedNumberLabel.clipsToBounds = true
         checkedNumberLabel.layer.cornerRadius = checkedNumberLabel.frame.size.width / 2

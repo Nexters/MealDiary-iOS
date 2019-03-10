@@ -27,7 +27,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="355.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample3" translatesAutoresizingMaskIntoConstraints="NO" id="EFz-0C-ZkV">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash1" translatesAutoresizingMaskIntoConstraints="NO" id="EFz-0C-ZkV">
                         <rect key="frame" x="20" y="0.0" width="280" height="335.5"/>
                     </imageView>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5Q-oK-o50">
@@ -137,6 +137,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="sample3" width="151.19999694824219" height="100.55999755859375"/>
+        <image name="splash1" width="106" height="94"/>
     </resources>
 </document>

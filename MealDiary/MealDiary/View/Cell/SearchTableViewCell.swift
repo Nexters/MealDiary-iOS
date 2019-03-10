@@ -46,6 +46,9 @@ class SearchTableViewCell: UITableViewCell {
         card.hashTagList.forEach { hashTag += ("#" + $0 + " ") }
         hashTagLabel.text = hashTag
         restaurantNameLabel.text = card.restaurantName
+        if card.restaurantName == "" {
+            restaurantNameLabel.text = "식당 정보가 없습니다."
+        }
         self.selectionStyle = .none
     }
 }

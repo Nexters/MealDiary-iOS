@@ -190,6 +190,17 @@ extension SearchViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
+    func fixTableViewInsets() {
+        let zContentInsets = UIEdgeInsets.zero
+        tagHistoryTable.contentInset = zContentInsets
+        tagHistoryTable.scrollIndicatorInsets = zContentInsets
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        fixTableViewInsets()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         searchBar.isHidden = false

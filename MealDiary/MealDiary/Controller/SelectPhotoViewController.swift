@@ -19,6 +19,7 @@ class SelectPhotoViewController: UIViewController {
     var dictionary: [Int: Int] = [:]
     let nextButton = UIButton(type: .system)
     let disposeBag = DisposeBag()
+    var checkedPhotos: [Photo] = []
     
     func setCollectionView() {
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
@@ -78,6 +79,9 @@ class SelectPhotoViewController: UIViewController {
                 }
                 
                 
+                let photo = cell.getPhoto()
+                self.checkedPhotos.append(photo)
+                
             }).disposed(by: disposeBag)
         
         collectionView.rx.itemDeselected
@@ -107,6 +111,9 @@ class SelectPhotoViewController: UIViewController {
                     }
                 }
                 
+                
+                let photo = cell.getPhoto()
+                self.checkedPhotos = self.checkedPhotos.filter{ $0.identifier != photo.identifier }
                 
             }).disposed(by: disposeBag)
 
@@ -141,18 +148,29 @@ class SelectPhotoViewController: UIViewController {
     }
     
     @objc func completeSelect() {
-        var photos: [Photo] = []
-        for index in selectedIndexPaths.value {
-            if let cell = collectionView.cellForItem(at: index) as? SelectPhotoCollectionViewCell {
-                if let data = cell.data {
-                    let identifier = cell.photo.localIdentifier
-                    let photo = Photo(identifier: identifier, data: data)
-                    photos.append(photo)
-                }
-            }
-        }
         
-        Global.shared.photos = photos
+//        var photos: [Photo] = []
+//        for index in selectedIndexPaths.value {
+//
+//            if let photo = self.photos.value[index.item] as? Photo {
+//                photos.append(photo)
+//            } else if let asset = self.photos.value[index.item] as? PHAsset {
+//
+//            }
+        
+//            if let cell = collectionView.cellForItem(at: index) as? SelectPhotoCollectionViewCell {
+//                if let data = cell.data {
+//                    let identifier = cell.photo.localIdentifier
+//                    let photo = Photo(identifier: identifier, data: data)
+//                    photos.append(photo)
+//                } else {
+//                    print(cell.image)
+//                }
+//            }
+            
+//        }
+    
+        Global.shared.photos = checkedPhotos
         
         let storyBoard = UIStoryboard(name: "Write", bundle: nil)
         guard let vc = storyBoard.instantiateViewController(withIdentifier: "WriteDiaryViewController") as? WriteDiaryViewController else {

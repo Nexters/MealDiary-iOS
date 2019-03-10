@@ -189,7 +189,7 @@
                 <outlet property="pointLabel" destination="oAP-QH-skh" id="BUC-mZ-k46"/>
                 <outlet property="restaurantLabel" destination="1Vq-dd-cqZ" id="fLg-Vu-QN2"/>
                 <outlet property="restaurantLocation" destination="4fo-8s-3aD" id="dsD-8D-WLM"/>
-                <outlet property="restaurantNameLabel" destination="0pa-ZK-1nw" id="nF3-KB-AzO"/>
+                <outlet property="titleTextLabel" destination="0pa-ZK-1nw" id="nF3-KB-AzO"/>
             </connections>
             <point key="canvasLocation" x="174.40000000000001" y="197.00149925037482"/>
         </tableViewCell>

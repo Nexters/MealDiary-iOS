@@ -13,7 +13,7 @@ class DetailCardTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cardNumberLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
-    @IBOutlet weak var restaurantNameLabel: UILabel!
+    @IBOutlet weak var titleTextLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var hashTagLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -47,7 +47,7 @@ class DetailCardTableViewCell: UITableViewCell {
         cardNumberLabel.layer.cornerRadius = 10
         cardNumberLabel.text = "1/" + card.photos.count.description
         pointLabel.text = card.score.description
-        restaurantNameLabel.text = card.titleText
+        titleTextLabel.text = card.titleText
         detailLabel.text = card.detailText
         dateLabel.text = card.date.toString()
         var hashTag = ""
@@ -62,6 +62,10 @@ class DetailCardTableViewCell: UITableViewCell {
         restaurantLabel.text = card.restaurantName
         restaurantLocation.attributedText = NSAttributedString(string: card.restaurantLocation, attributes:
             [.underlineStyle: NSUnderlineStyle.single.rawValue])
+        
+        if card.restaurantName == "" {
+            restaurantLabel.text = "식당 정보가 없습니다."
+        }
     }
     
     var currentPage = 1

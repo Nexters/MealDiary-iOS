@@ -92,7 +92,7 @@
         <!--Select Photo View Controller-->
         <scene sceneID="7vf-lb-nO2">
             <objects>
-                <viewController storyboardIdentifier="SelectPhotoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rAu-eq-70Y" customClass="SelectPhotoViewController" customModule="MealDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectPhotoViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rAu-eq-70Y" customClass="SelectPhotoViewController" customModule="MealDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u8Y-XV-gqp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

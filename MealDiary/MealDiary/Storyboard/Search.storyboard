@@ -43,10 +43,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qh-e3-hlJ">
-                                <rect key="frame" x="20" y="21" width="60" height="45"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qh-e3-hlJ">
+                                <rect key="frame" x="20" y="21" width="110" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="VeU-w4-3WU"/>
+                                    <constraint firstAttribute="width" constant="110" id="VeU-w4-3WU"/>
                                     <constraint firstAttribute="height" constant="45" id="jrw-Vu-4bC"/>
                                 </constraints>
                                 <state key="normal" image="iconChevronSmDownDefault">
