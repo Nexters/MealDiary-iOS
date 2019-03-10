@@ -139,6 +139,13 @@ class Global {
         searchHistory.accept(historyArray)
     }
     
+    func removeSearch(index: Int) {
+        var historyArray = AssetManager.getArrayData(for: DictKeyword.searchHistory.rawValue)
+        historyArray.remove(at: index)
+        AssetManager.save(data: historyArray, for: DictKeyword.searchHistory.rawValue)
+        searchHistory.accept(historyArray)
+    }
+    
     func searchBy(_ query: String) -> [ContentCard] {
         var searchResult: [ContentCard] = []
         for card in cards.value {

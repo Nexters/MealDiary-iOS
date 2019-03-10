@@ -112,6 +112,7 @@ class SearchViewController: UIViewController {
             (row, tag, cell) in
             cell.tagLabel.text = tag
             cell.setWhite()
+            cell.index = row
             }.disposed(by: disposeBag)
         
         tagHistoryTable.rx.itemSelected.subscribe( onNext: { [weak self] indexPath in

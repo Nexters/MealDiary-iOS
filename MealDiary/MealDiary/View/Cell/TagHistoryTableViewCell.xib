@@ -27,29 +27,46 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIv-Q4-V2Y">
-                        <rect key="frame" x="24" y="0.0" width="272" height="44.5"/>
+                        <rect key="frame" x="24" y="0.0" width="256" height="44.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnc-iW-fpD">
+                        <rect key="frame" x="289.5" y="14" width="15.5" height="15.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Pnc-iW-fpD" secondAttribute="height" multiplier="1:1" id="rKX-gc-h2E"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="close"/>
+                        <connections>
+                            <action selector="pressDeleteButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="P6s-WG-ZS9"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.95294117647058818" green="0.96862745098039216" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
+                    <constraint firstItem="Pnc-iW-fpD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="C2X-v7-GvX"/>
                     <constraint firstAttribute="bottom" secondItem="2Ja-Ff-1NW" secondAttribute="bottom" id="LGQ-wY-TBb"/>
                     <constraint firstAttribute="trailing" secondItem="2Ja-Ff-1NW" secondAttribute="trailing" constant="20" id="NwH-Eq-E6G"/>
                     <constraint firstItem="yIv-Q4-V2Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SOy-Pl-qRT"/>
                     <constraint firstItem="2Ja-Ff-1NW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Yi1-ai-vMm"/>
                     <constraint firstItem="yIv-Q4-V2Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="eKL-uO-d3e"/>
-                    <constraint firstAttribute="trailing" secondItem="yIv-Q4-V2Y" secondAttribute="trailing" constant="24" id="el2-wo-f1q"/>
+                    <constraint firstAttribute="trailing" secondItem="yIv-Q4-V2Y" secondAttribute="trailing" constant="40" id="el2-wo-f1q"/>
+                    <constraint firstAttribute="trailing" secondItem="Pnc-iW-fpD" secondAttribute="trailing" constant="15" id="hEb-7S-C6e"/>
+                    <constraint firstItem="2Ja-Ff-1NW" firstAttribute="top" secondItem="Pnc-iW-fpD" secondAttribute="bottom" constant="14" id="jtF-Kn-sGI"/>
                     <constraint firstItem="2Ja-Ff-1NW" firstAttribute="bottom" secondItem="yIv-Q4-V2Y" secondAttribute="bottom" id="mhJ-7F-vKF"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="deleteButton" destination="Pnc-iW-fpD" id="COQ-Gg-qsV"/>
                 <outlet property="separatorView" destination="2Ja-Ff-1NW" id="igJ-JZ-gk4"/>
                 <outlet property="tagLabel" destination="yIv-Q4-V2Y" id="yNU-eB-iZO"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="122.78860569715144"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="close" width="491.51998901367188" height="491.51998901367188"/>
+    </resources>
 </document>
