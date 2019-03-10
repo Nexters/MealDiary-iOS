@@ -37,7 +37,7 @@ class SearchTableViewCell: UITableViewCell {
         titleLabel.text = card.titleText
         distanceLabel.text = "km"
         var hashTag = ""
-        card.hashTagList.forEach { hashTag += ("#" + $0 + " ") }
+        card.hashTagList.forEach { hashTag += ($0 + " ") }
         hashTagLabel.text = hashTag
         restaurantNameLabel.text = card.restaurantName
         self.selectionStyle = .none
