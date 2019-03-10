@@ -13,7 +13,6 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var hashTagLabel: UILabel!
     @IBOutlet weak var restaurantNameLabel: UILabel!
-    @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var foodImage: UIImageView!
     static let identifier = "SearchTableViewCell"
     
@@ -43,7 +42,6 @@ class SearchTableViewCell: UITableViewCell {
             }
         }
         titleLabel.text = card.titleText
-        distanceLabel.text = "km"
         var hashTag = ""
         card.hashTagList.forEach { hashTag += ("#" + $0 + " ") }
         hashTagLabel.text = hashTag

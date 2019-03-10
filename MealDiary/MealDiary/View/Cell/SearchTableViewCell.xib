@@ -44,18 +44,8 @@
                         <color key="textColor" red="0.62352941176470589" green="0.64313725490196072" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njv-nU-fHL">
-                        <rect key="frame" x="260" y="92.5" width="40" height="18"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="40" id="TyS-cS-mtK"/>
-                            <constraint firstAttribute="height" constant="18" id="zca-xu-Y7O"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" red="0.62352941179999999" green="0.64313725489999995" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k24-ok-qel">
-                        <rect key="frame" x="160" y="83.5" width="90" height="29"/>
+                        <rect key="frame" x="160" y="83.5" width="35.5" height="29"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -82,8 +72,6 @@
                     <constraint firstItem="hmo-e9-aDw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="9Wy-KD-ATJ"/>
                     <constraint firstItem="hWF-PH-Zg0" firstAttribute="leading" secondItem="hmo-e9-aDw" secondAttribute="trailing" constant="16" id="AoB-Uj-D9b"/>
                     <constraint firstItem="k24-ok-qel" firstAttribute="leading" secondItem="hWF-PH-Zg0" secondAttribute="trailing" constant="10" id="FjK-uH-0cd"/>
-                    <constraint firstAttribute="trailing" secondItem="njv-nU-fHL" secondAttribute="trailing" constant="20" id="GVX-sf-GYa"/>
-                    <constraint firstItem="njv-nU-fHL" firstAttribute="leading" secondItem="k24-ok-qel" secondAttribute="trailing" constant="10" id="GjR-IU-iHQ"/>
                     <constraint firstAttribute="bottom" secondItem="KsG-zl-IYU" secondAttribute="bottom" id="IUi-Py-hQK"/>
                     <constraint firstItem="hmo-e9-aDw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Jg6-yM-f8D"/>
                     <constraint firstAttribute="trailing" secondItem="ANw-g3-dAt" secondAttribute="trailing" constant="16" id="NvL-uE-hji"/>
@@ -91,7 +79,6 @@
                     <constraint firstItem="reZ-NZ-4qm" firstAttribute="top" secondItem="ANw-g3-dAt" secondAttribute="bottom" constant="1" id="cUO-0r-JW2"/>
                     <constraint firstAttribute="bottom" secondItem="k24-ok-qel" secondAttribute="bottom" constant="21" id="eE4-0D-rPw"/>
                     <constraint firstAttribute="trailingMargin" secondItem="reZ-NZ-4qm" secondAttribute="trailing" constant="16" id="g00-kd-2xf"/>
-                    <constraint firstAttribute="bottom" secondItem="njv-nU-fHL" secondAttribute="bottom" constant="23" id="gJF-hT-0DW"/>
                     <constraint firstAttribute="trailing" secondItem="KsG-zl-IYU" secondAttribute="trailing" constant="20" id="gaG-4l-tf9"/>
                     <constraint firstItem="ANw-g3-dAt" firstAttribute="leading" secondItem="hmo-e9-aDw" secondAttribute="trailing" constant="16" id="yJ0-Cp-UvN"/>
                     <constraint firstItem="reZ-NZ-4qm" firstAttribute="leading" secondItem="hmo-e9-aDw" secondAttribute="trailing" constant="16" id="yv8-X3-aWO"/>
@@ -99,7 +86,6 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="distanceLabel" destination="njv-nU-fHL" id="7Fm-1h-pHh"/>
                 <outlet property="foodImage" destination="hmo-e9-aDw" id="MeK-jY-EFg"/>
                 <outlet property="hashTagLabel" destination="reZ-NZ-4qm" id="75x-GY-ZMM"/>
                 <outlet property="restaurantNameLabel" destination="k24-ok-qel" id="pVJ-KV-sEW"/>
