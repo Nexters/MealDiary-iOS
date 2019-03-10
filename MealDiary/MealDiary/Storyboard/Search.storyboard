@@ -82,6 +82,7 @@
                         <outlet property="headLabel" destination="T8u-VZ-d7r" id="QCT-aj-N35"/>
                         <outlet property="searchTable" destination="eGs-4Y-7l1" id="sMe-Ky-28Q"/>
                         <outlet property="tagHistoryTable" destination="rfr-50-rXo" id="gLi-5C-2db"/>
+                        <outlet property="tagTableBottomLayout" destination="due-92-zW7" id="zLM-Ne-RYC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXV-t4-gbp" userLabel="First Responder" sceneMemberID="firstResponder"/>

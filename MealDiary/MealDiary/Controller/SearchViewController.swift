@@ -11,6 +11,10 @@ import RxSwift
 import RxCocoa
 
 class SearchViewController: UIViewController {
+    
+    @IBOutlet weak var tagTableBottomLayout: NSLayoutConstraint!
+    
+    
     lazy private var searchBar: UISearchBar = UISearchBar()
     let disposeBag = DisposeBag()
     @IBOutlet weak var searchTable: UITableView!
@@ -173,6 +177,19 @@ class SearchViewController: UIViewController {
     deinit {
         print("VC deinit")
     }
+    
+    @objc func keyboardInteraction(notification: Notification) {
+        let userInfo = notification.userInfo!
+        
+        let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+        
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            tagTableBottomLayout.constant = 0
+        } else {
+            tagTableBottomLayout.constant = keyboardViewEndFrame.height
+        }
+    }
 }
 
 extension SearchViewController {
@@ -188,6 +205,8 @@ extension SearchViewController {
         super.viewWillDisappear(animated)
         searchBar.isHidden = true
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     func fixTableViewInsets() {
@@ -210,6 +229,9 @@ extension SearchViewController {
         } else {
             tagHistoryTable.allowsSelection = true
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardInteraction(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardInteraction(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+
     }
 }
 

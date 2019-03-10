@@ -21,15 +21,18 @@ class HomeCardTableViewCell: UITableViewCell {
     
     func setUp(with card: ContentCard) {
         if let photo = card.photos.first {
-            let asset = AssetManager.fetchImages(by: [photo.identifier]).first
-            if let `asset` = asset {
-                
-                backgroundImage.fetchImage(asset: asset, contentMode: .aspectFill, targetSize: self.frame.size) { _ in
-                    
-                }
-            } else if let data = photo.data {
+//            let asset = AssetManager.fetchImages(by: [photo.identifier]).first
+            if let data = photo.data {
                 backgroundImage.image = UIImage(data: data)
             }
+//            if let `asset` = asset {
+//
+//                backgroundImage.fetchImage(asset: asset, contentMode: .aspectFill, targetSize: self.frame.size) { _ in
+//
+//                }
+//            } else if let data = photo.data {
+//                backgroundImage.image = UIImage(data: data)
+//            }
         }
         
         backgroundImage.layer.cornerRadius = 10
@@ -42,7 +45,13 @@ class HomeCardTableViewCell: UITableViewCell {
         hashTagLabel.text = hashTag
         
         let width = titleTextLabel.intrinsicContentSize.width
-        widthConstraint.constant = width + 9
+        
+        if width < self.frame.width - 80 {
+            widthConstraint.constant = width + 9
+        } else {
+            widthConstraint.constant = self.frame.width - 80
+        }
+        
         
         self.selectionStyle = .none
     }
