@@ -85,21 +85,24 @@ extension DetailViewController {
     @objc private func popBigImage(_ notification: Notification){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "BigImageViewController") as! BigImageViewController
-        
-        if let photo = notification.userInfo?["photo"] as? Photo {
+        if let image = notification.userInfo?["image"] as? UIImage {
             self.present(vc, animated: false, completion: nil)
-            let asset = AssetManager.fetchImages(by: [photo.identifier]).first
-            if let `asset` = asset {
-                
-                vc.imageView.fetchImage(asset: asset, contentMode: .aspectFit, targetSize: vc.imageView.frame.size) { _ in
-                    
-                }
-            } else if let data = photo.data {
-                vc.imageView.image = UIImage(data: data)
-            }
-            
-            
+            vc.imageView.image = image
         }
+//        if let photo = notification.userInfo?["photo"] as? Photo {
+//            self.present(vc, animated: false, completion: nil)
+//            let asset = AssetManager.fetchImages(by: [photo.identifier]).first
+//            if let `asset` = asset {
+//
+//                vc.imageView.fetchImage(asset: asset, contentMode: .aspectFit, targetSize: vc.view.frame.size) { _ in
+//
+//                }
+//            } else if let data = photo.data {
+//                vc.imageView.image = UIImage(data: data)
+//            }
+//
+//
+//        }
         
     }
     

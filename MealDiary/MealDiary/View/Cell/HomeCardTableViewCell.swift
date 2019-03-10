@@ -24,7 +24,7 @@ class HomeCardTableViewCell: UITableViewCell {
             let asset = AssetManager.fetchImages(by: [photo.identifier]).first
             if let `asset` = asset {
                 
-                backgroundImage.fetchImage(asset: asset, contentMode: .aspectFill, targetSize: backgroundImage.frame.size) { _ in
+                backgroundImage.fetchImage(asset: asset, contentMode: .aspectFill, targetSize: self.frame.size) { _ in
                     
                 }
             } else if let data = photo.data {

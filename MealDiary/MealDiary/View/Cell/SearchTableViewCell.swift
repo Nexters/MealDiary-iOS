@@ -35,7 +35,7 @@ class SearchTableViewCell: UITableViewCell {
             let asset = AssetManager.fetchImages(by: [photo.identifier]).first
             if let `asset` = asset {
                 
-                foodImage.fetchImage(asset: asset, contentMode: .aspectFill, targetSize: foodImage.frame.size) { _ in
+                foodImage.fetchImage(asset: asset, contentMode: .aspectFill, targetSize: self.frame.size) { _ in
                     
                 }
             } else if let data = photo.data {

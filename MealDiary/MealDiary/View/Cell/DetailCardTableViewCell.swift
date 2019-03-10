@@ -79,7 +79,7 @@ extension DetailCardTableViewCell: UICollectionViewDelegate, UICollectionViewDat
             let asset = AssetManager.fetchImages(by: [photo.identifier]).first
             if let `asset` = asset {
                 
-                cell.imageView.fetchImage(asset: asset, contentMode: .aspectFill, targetSize: cell.imageView.frame.size) { _ in
+                cell.imageView.fetchImage(asset: asset, contentMode: .aspectFill, targetSize: self.frame.size) { _ in
                     
                 }
             } else if let data = photo.data {
@@ -91,9 +91,12 @@ extension DetailCardTableViewCell: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let photo = card?.photos[indexPath.item] {
-            NotificationCenter.default.post(name: Notification.Name(rawValue: "popBigImage"), object: nil, userInfo: ["photo" : photo])
+        if let cell = collectionView.cellForItem(at: indexPath) as? PhotoCollectionViewCell {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "popBigImage"), object: nil, userInfo: ["image" : cell.imageView.image])
         }
+//        if let photo = card?.photos[indexPath.item] {
+//            NotificationCenter.default.post(name: Notification.Name(rawValue: "popBigImage"), object: nil, userInfo: ["photo" : photo])
+//        }
     }
 }
 
