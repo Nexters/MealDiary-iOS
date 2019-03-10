@@ -17,6 +17,9 @@ class DetailCardTableViewCell: UITableViewCell {
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var hashTagLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var restaurantLabel: UILabel!
+    @IBOutlet weak var restaurantLocation: UILabel!
+    @IBOutlet weak var locationView: UIView!
     
     var card: ContentCard?
     
@@ -48,14 +51,17 @@ class DetailCardTableViewCell: UITableViewCell {
         detailLabel.text = card.detailText
         dateLabel.text = card.date.toString()
         var hashTag = ""
-        card.hashTagList.forEach { hashTag += ("#" + $0 + " ") }
+        card.hashTagList.forEach { hashTag += ($0 + " ") }
         hashTagLabel.text = hashTag
         
         let detailtextHeight = card.detailText.getHeight(withConstrainedWidth: parentViewSize.width - 40, size: 14)
         detailLabel.changeLineSpacing(5)
         detailLabel.frame = CGRect(x: 20, y: 450, width: parentViewSize.width - 40, height: detailtextHeight * 1.4)
 
-        //        addressLabel.attributedText = NSAttributedString(string: addressLabel.text ?? "", attributes: underlineAttributes)
+        locationView.layer.cornerRadius = 4
+        restaurantLabel.text = card.restaurantName
+        restaurantLocation.attributedText = NSAttributedString(string: card.restaurantLocation, attributes:
+            [.underlineStyle: NSUnderlineStyle.single.rawValue])
     }
     
     var currentPage = 1

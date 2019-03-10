@@ -59,6 +59,9 @@ class WriteDiaryViewController: UIViewController {
         scrollView.contentSize.height -= viewStartY
         scrollView.contentOffset.y += viewStartY
         
+        restaurantTableView.isHidden = true
+        tagTableView.isHidden = true
+        
         restaurantTableView.frame = CGRect(x: 0, y: restaurantTextField.frame.origin.y + restaurantTextField.frame.size.height + 5, width: scrollView.frame.size.width, height: scrollView.frame.height - keyboardFrame.height - view.frame.height)
         
         tagTableView.frame = CGRect(x: 0, y: hashTagTextField.frame.origin.y + hashTagTextField.frame.size.height + 5, width: scrollView.frame.size.width, height: scrollView.frame.height - keyboardFrame.height - view.frame.height)
@@ -151,8 +154,8 @@ class WriteDiaryViewController: UIViewController {
         
         setUpPlaceHolder()
         
-        scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+//        scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+//        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
         
         titleTextField.frame = CGRect(x: 30, y: 0, width: view.frame.width - 60, height: 48)
         bottomView1.frame = CGRect(x: 20, y: titleTextField.frame.origin.y + titleTextField.frame.height, width: self.view.frame.width - 40, height: 1)
@@ -262,8 +265,8 @@ class WriteDiaryViewController: UIViewController {
             Global.shared.titleText = self.titleTextField.text ?? ""
             Global.shared.detailText = self.textView.text
             Global.shared.hashTagList = self.hashTagArray
-            //Global.shared.restaurantName = self.restaurantTextField.text ?? ""
-           // Global.shared.restaurantLocation = ""
+            Global.shared.restaurantName = self.restaurantTextField.text ?? ""
+            
             Global.shared.restaurantLatitude = 0
             Global.shared.restaurantLongitude = 0
             //
@@ -349,6 +352,13 @@ class WriteDiaryViewController: UIViewController {
     }
     
     func searchPlace(keyword: String) {
+        if keyword.count < 1 {
+            self.restaurantTableView.isHidden = true
+            return
+        }
+        
+        self.restaurantTableView.isHidden = false
+    
         Alamofire.request(
             host,
             method: .get,
@@ -364,6 +374,10 @@ class WriteDiaryViewController: UIViewController {
                 let data = response.data
                 let dataJSON = JSON(data as Any)
                 let dataCount = dataJSON["documents"].count
+                
+                if dataCount < 1 {
+                    self.restaurantTableView.isHidden = true
+                }
                 
                 Global.shared.restaurantTotalCount = dataCount
                 
@@ -433,6 +447,10 @@ extension WriteDiaryViewController: UITextFieldDelegate {
         if textField == titleTextField {
             bottomView1.backgroundColor = UIColor.darkGray
         } else if textField == hashTagTextField {
+            if textField.text == "" {
+                textField.text = "#"
+            }
+
             bottomView3.backgroundColor = UIColor.darkGray
             tagTableView.isHidden = false
         } else {
@@ -446,6 +464,7 @@ extension WriteDiaryViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         tagTableView.isHidden = true
         restaurantTableView.isHidden = true
+        
         if textField == titleTextField {
             bottomView1.backgroundColor = UIColor.paleGray
         } else if textField == hashTagTextField {
@@ -453,6 +472,24 @@ extension WriteDiaryViewController: UITextFieldDelegate {
         } else {
             bottomView4.backgroundColor = UIColor.paleGray
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        
+        let words = text.components(separatedBy: " ")
+        var tagWords = [String]()
+       
+        if words.count > 5 {
+            textField.deleteBackward()
+        }
+        
+        return words.count < 6
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        dismissKeyboard()
+        return true
     }
 }
 
@@ -499,17 +536,52 @@ extension WriteDiaryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView == tagTableView ? 48 : 74
     }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let cell = self.tableView.cellForRow(at: indexPath) as? TagHistoryTableViewCell else {
-//            fatalError("Misconfigured cell type!")
-//        }
-//
-//        guard let hashTagTextField = self.hashTagTextField.text else {
-//            return
-//        }
-//
-//        if let selectedTagText = cell.tagLabel.text?.dropFirst() {
-//            self.hashTagTextField.text = hashTagTextField + String(selectedTagText)
-//        }
-//    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if tableView == tagTableView {
+            tableView.isHidden = false
+            guard let cell = tableView.cellForRow(at: indexPath) as? TagHistoryTableViewCell else {
+                fatalError("Misconfigured cell type!")
+            }
+            
+            guard let hashTagTextField = self.hashTagTextField.text else {
+                return
+            }
+            
+            if let selectedTagText = cell.tagLabel.text {
+                if let index = hashTagTextField.range(of: "#")?.lowerBound {
+                    let substring = hashTagTextField.suffix(from: index)
+                    let string = String(substring)
+                    var words = string.components(separatedBy: " ")
+                    
+                    words.removeLast()
+                    words.append(selectedTagText)
+                    
+                    var hashTagText: String = ""
+                    for word in words {
+                        if let word = word as String? {
+                            hashTagText += "\(word) "
+                        }
+                    }
+                    
+                    self.hashTagTextField.text = hashTagText
+                    tableView.isHidden = true
+                }
+                
+            }
+        } else {
+            tableView.isHidden = false
+            guard let cell = tableView.cellForRow(at: indexPath) as? SearchRestaurantTableViewCell else {
+                fatalError("Misconfigured cell type!")
+            }
+            
+            if let selectedTagText = cell.placeLabel.text {
+                self.restaurantTextField.text = String(selectedTagText)
+                Global.shared.restaurantLocation = cell.locationLabel.text ?? ""
+                tableView.isHidden = true
+                self.view.endEditing(true)
+            }
+        }
+    }
 }
