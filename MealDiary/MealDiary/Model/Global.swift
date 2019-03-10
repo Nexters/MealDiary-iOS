@@ -59,8 +59,8 @@ class Global {
         switch type {
         case .date:
             filteredCards.sort(by: { $0.date > $1.date })
-        case .distance:
-            ()
+//        case .distance:
+//            ()
         case .score:
             filteredCards.sort(by: { $0.score > $1.score })
         }

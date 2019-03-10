@@ -12,7 +12,7 @@ import RxCocoa
 
 public enum filterType: String {
     case date = "최신순"
-    case distance = "거리순"
+//    case distance = "거리순"
     case score = "평점순"
 }
 
@@ -76,14 +76,14 @@ class MainViewController: UIViewController {
         }
         actionSheetController.addAction(dateActionButton)
         
-        let distanceActionButton = UIAlertAction(title: "거리순", style: .default) { [weak self] action -> Void in
-            guard let `self` = self else { return }
-            self.filterView.filterLabel.text = filterType.distance.rawValue
-            Global.shared.mainFilterType = .distance
-            Global.shared.cards.accept(Global.shared.filter(cards: Global.shared.cards.value, by: .distance))
-            self.scrollToTop()
-        }
-        actionSheetController.addAction(distanceActionButton)
+//        let distanceActionButton = UIAlertAction(title: "거리순", style: .default) { [weak self] action -> Void in
+//            guard let `self` = self else { return }
+//            self.filterView.filterLabel.text = filterType.distance.rawValue
+//            Global.shared.mainFilterType = .distance
+//            Global.shared.cards.accept(Global.shared.filter(cards: Global.shared.cards.value, by: .distance))
+//            self.scrollToTop()
+//        }
+//        actionSheetController.addAction(distanceActionButton)
         
         let scoreActionButton = UIAlertAction(title: "평점순",style: .default) { [weak self] action -> Void in
             guard let `self` = self else { return }

@@ -14,7 +14,6 @@ class SelectPhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var imageView: UIImageView!
     var photo = PHAsset()
-    var image: UIImage?
     var index: Int = 0
     var checked: Bool = false
     var data: Data?
@@ -24,7 +23,7 @@ class SelectPhotoCollectionViewCell: UICollectionViewCell {
     func setUp(with photo: PHAsset) {
         self.photo = photo
         imageView.fetchImage(asset: photo, contentMode: .aspectFill, targetSize: imageView.frame.size) { [weak self] (image) in
-            self?.image = image
+            self?.data = image?.pngData()
         }
         checkedNumberLabel.clipsToBounds = true
         checkedNumberLabel.layer.cornerRadius = checkedNumberLabel.frame.size.width / 2

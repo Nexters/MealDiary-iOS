@@ -37,14 +37,14 @@ class SearchViewController: UIViewController {
         }
         actionSheetController.addAction(dateActionButton)
         
-        let distanceActionButton = UIAlertAction(title: "거리순", style: .default) { [weak self] action -> Void in
-            guard let `self` = self else { return }
-            self.currentFilter = filterType.distance
-            self.headLabel.text = filterType.distance.rawValue
-            Global.shared.searchFilterType = .distance
-            self.cards.accept(Global.shared.filter(cards: self.cards.value, by: .distance))
-        }
-        actionSheetController.addAction(distanceActionButton)
+//        let distanceActionButton = UIAlertAction(title: "거리순", style: .default) { [weak self] action -> Void in
+//            guard let `self` = self else { return }
+//            self.currentFilter = filterType.distance
+//            self.headLabel.text = filterType.distance.rawValue
+//            Global.shared.searchFilterType = .distance
+//            self.cards.accept(Global.shared.filter(cards: self.cards.value, by: .distance))
+//        }
+//        actionSheetController.addAction(distanceActionButton)
         
         let scoreActionButton = UIAlertAction(title: "평점순",style: .default) { [weak self] action -> Void in
             guard let `self` = self else { return }

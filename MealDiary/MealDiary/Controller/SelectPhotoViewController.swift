@@ -148,10 +148,6 @@ class SelectPhotoViewController: UIViewController {
                     let identifier = cell.photo.localIdentifier
                     let photo = Photo(identifier: identifier, data: data)
                     photos.append(photo)
-                } else if let data = cell.image?.pngData() {
-                    let identifier = cell.photo.localIdentifier
-                    let photo = Photo(identifier: identifier, data: data)
-                    photos.append(photo)
                 }
             }
         }
@@ -169,6 +165,8 @@ class SelectPhotoViewController: UIViewController {
     deinit {
         print("VC deinit")
     }
+    
+    var first: Bool = true
 }
 
 extension SelectPhotoViewController {
@@ -187,7 +185,10 @@ extension SelectPhotoViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        titleLabel.setOrangeUnderLine(alpha: 0.4)
+        if first {
+            titleLabel.setOrangeUnderLine()
+            first = false
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
