@@ -113,6 +113,11 @@ class SearchViewController: UIViewController {
             cell.tagLabel.text = tag
             cell.setWhite()
             cell.index = row
+            
+            if tag == "검색 기록이 없습니다." {
+                cell.deleteButton.isHidden = true
+            } 
+            
             }.disposed(by: disposeBag)
         
         tagHistoryTable.rx.itemSelected.subscribe( onNext: { [weak self] indexPath in
